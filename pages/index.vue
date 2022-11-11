@@ -60,7 +60,7 @@
                       <div class="nameText mr-2">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
                     <div class="mb-2">Hi! I'm Senior Front-End Developer of Cityplan Indonesia.</div>
-                    <div>I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services.</div>
+                    <div>I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
                     <div class="d-flex align-center mt-5">
                       <div class="mr-4"><v-btn outlined small><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
                       <div class="iconButton"><v-icon>mdi-linkedin</v-icon></div>
@@ -76,8 +76,12 @@
       </v-container>
     </div>
 
+    <div class="text-center">
+      
+      Skill tags:
+    </div>
     <div class="d-flex justify-center">
-      <div class="mb-10" style="max-width:600px;text-align: center;">
+      <div style="max-width:600px;text-align: center;">
         <v-chip class="mr-b mt-2">Front-end Development</v-chip>
         <v-chip class="mr-b mt-2">Vue JS</v-chip>
         <v-chip class="mr-b mt-2">Nuxt JS</v-chip>
@@ -89,18 +93,26 @@
         <v-chip class="mr-b mt-2 light-blue">View More</v-chip>
       </div>
     </div>
-    <div id="section-2" class="section-2 wow slideInLeft" >
-      <v-container>
-        <div class="pa-5 d-flex align-center justify-center mt-10" style="flex-flow:column" data-aos="fade-up">
-          <h2>Product Highlight - Dash Spatia</h2>
-          <div class="blueLine my-5" 
-      data-aos="flip-right"></div>
+    <div id="section-2" class="section-2" >
 
+      <v-container>
+        <v-row>
+          <v-col>
+        <div class="d-flex align-center justify-center mt-10" style="flex-flow:column" data-aos="fade-up">
+          <div class="blueLine mb-9"></div>
+
+          <v-chip small outlined class="purple purple--text text--lighten-2 mb-3">PRODUCT HIGHLIGHT</v-chip>
+
+          <div class="mb-3">
+           <img src="/img/spatia.png" width="150px">
+          </div>
 
           <div style="max-width: 800px">
-            <center>Dash is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
+            <center><b>Dash spatia</b> is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
           </div>
         </div>
+      </v-col>
+      </v-row>
       </v-container>
 
       <v-container class="mt-0 pt-0">
@@ -115,7 +127,6 @@
           <v-slide-group
             v-model="model"
             class="pa-4"
-            active-class="success"
             show-arrows
           >
             <v-slide-item
@@ -135,7 +146,7 @@
         </v-sheet>
 
         <div class="d-flex justify-center mt-5">
-          <v-btn class="light-blue--text mt-3" rounded style="width:250px" href="https://spatia.id" target="_blank">DISCOVER DASH SPATIA <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+          <v-btn class="purple--text mt-3 text--lighten-2" rounded style="width:250px" href="https://spatia.id" target="_blank">DISCOVER DASH SPATIA <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
         </div>
         </v-col>
       </v-row>
@@ -143,15 +154,28 @@
       
 
     </div>
+    
+    <v-container>
+    <div class="blueLine mt-8"></div>
+  </v-container>
 
     <div class="menupadSection  pt-10 pb-10">
-        <div class="section-2 wow slideInLeft">
+      
+      <div class="d-flex justify-center">
+      <v-chip small outlined class="orange orange--text mb-3">PRODUCT HIGHLIGHT</v-chip>
+      </div>
+      
+      <div class="d-flex justify-center">
+      <div class="rounded-lg" style="width:fit-content;">
+           <img src="/img/menupad.svg" width="200px">
+      </div>
+    </div>
+
+        <div class="section-2">
           <v-container>
-            <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
-              <h2>Product Highlight - Menupad</h2>
-              <div class="blueLine my-5"  data-aos="flip-right"></div>
+            <div class="d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
               <div style="max-width: 800px"  data-aos="fade-up">
-                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Unlike print menus which are hard to see on small screens. Direct your customers to digital menus specially designed for smartphone screens.
+                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Direct your customers to digital menus specially designed for smartphone screens.
 
                 This menu can be accessed via a QR code, or via a link on your social media profile.</center>
               </diV>
@@ -170,7 +194,6 @@
             >
               <v-slide-group
                 v-model="model"
-                active-class="success"
                 show-arrows
               >
                 <v-slide-item
@@ -189,7 +212,7 @@
             </v-sheet>
             
         <div class="d-flex justify-center my-5">
-          <v-btn class="light-blue--text mt-3" rounded style="width:250px" href="https://menupad.link" target="_blank">DISCOVER MENUPAD <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+          <v-btn class="red--text mt-3" rounded style="width:250px" href="https://menupad.link" target="_blank">DISCOVER MENUPAD <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
         </div>
           </v-col>
           </v-row>
@@ -261,10 +284,10 @@ $light-blue-lighten-2:#4FC3F7;
 }
 
 .blueLine {
-  height:10px;
-  width:300px;
+  height:2px;
+  width:100%;
   border-radius:20px;
-  background: linear-gradient(90.02deg, #2986AD -10.31%, #144865 114.18%);
+  background-color:#272727;
 }
 
 
@@ -419,6 +442,7 @@ export default {
     return {
       scrollPosition:null,
       boxShadowColor: '#00E2FFFF',
+      model:0
     } 
   },
   mounted() {
