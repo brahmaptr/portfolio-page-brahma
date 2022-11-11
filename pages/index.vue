@@ -220,6 +220,70 @@
     </div>
 
 
+    <v-container>
+    <div>
+      <div class="blueLine"></div>
+    </div>
+  </v-container>
+
+  <v-container>
+    <v-row>
+      <v-col>
+        <div class="text-center mb-5">
+          <h1>
+            Publication<span class="ml-3"><v-icon  :style="'color:'+boxShadowColor">mdi-newspaper-variant-multiple</v-icon></span>
+          </h1>
+        </div>
+        <div class="d-flex justify-center">
+          <div style="max-width:600px">
+              <div class="mb-5">
+                <b>Data-to-Text for Generating Information of Weather and Air Quality in the R Programming Language
+                  </b>
+                  <div>
+                    Journal of Engineering Science and Technology<br/>
+                    Vol. 14, No. 1 (2019) 498 - 508<br/>
+                    © School of Engineering, Taylor’s University
+                  </div>
+                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
+              </div>
+              <div class="mb-5">
+                <b>Building Map-Based Web Application using Nuxt and Mapbox
+                  </b>
+                  <div>
+                    Medium Article
+                  </div>
+                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
+              </div>
+              <div class="mb-5">
+                <b>Using IBM’s AutoAI: How I build a salary prediction system
+                  </b>
+                  <div>
+                    Medium Article
+                  </div>
+                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
+              </div>
+              <div>
+                <b>Moving Towards a Goal — 5 Reasons IBM Cloud Developer Certification can escalate your career
+                  </b>
+                  <div>
+                    Medium Article
+                  </div>
+                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
+              </div>
+              <div>
+                <b>Client-side PDF Generation: If you struggled with dynamic content positioning in jsPdf
+                  </b>
+                  <div>
+                    Medium Article
+                  </div>
+                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
+              </div>
+          </div>
+      </div>
+      </v-col>
+    </v-row>
+  </v-container>
+
   </div>
 </template>
 
