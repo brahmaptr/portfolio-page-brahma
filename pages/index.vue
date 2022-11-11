@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbarPersonal" :style="'box-shadow: 0 0 300px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 250}">
+    <div class="navbarPersonal" :style="'box-shadow: 0 0 200px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 50}">
       <v-container>
       <div class="d-flex justify-space-between align-center" >
               <div class="logo"></div>
@@ -59,13 +59,14 @@
                     <div class="d-flex align-start" style="position:relative">
                       <div class="nameText mr-2">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
-                    <div class="mb-2">Senior Front-End Developer of Cityplan Indonesia.</div>
+                    <div class="mb-2">Hi! I'm Senior Front-End Developer of Cityplan Indonesia.</div>
                     <div>I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services.</div>
                     <div class="d-flex align-center mt-5">
-                      <div class="mr-2"><v-btn outlined x-small>Contact</v-btn></div>
+                      <div class="mr-4"><v-btn outlined small><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
                       <div class="iconButton"><v-icon>mdi-linkedin</v-icon></div>
                       <div class="iconButton"><v-icon>mdi-github</v-icon></div>
                       <div class="iconButton d-flex align-center justify-center"><img src="/img/freelancer.png" width="25px"></div>
+                      <div class="iconButton d-flex align-center justify-center"><img src="/img/medium.png" width="25px"></div>
                     </div>
                   </div>
               </div>
@@ -75,85 +76,124 @@
       </v-container>
     </div>
 
-    <div>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
-      ad<br/>
+    <div class="d-flex justify-center">
+      <div class="mb-10" style="max-width:600px;text-align: center;">
+        <v-chip class="mr-b mt-2">Front-end Development</v-chip>
+        <v-chip class="mr-b mt-2">Vue JS</v-chip>
+        <v-chip class="mr-b mt-2">Nuxt JS</v-chip>
+        <v-chip class="mr-b mt-2">GIS</v-chip>
+        <v-chip class="mr-b mt-2">Arcgis Javascript</v-chip>
+        <v-chip class="mr-b mt-2">Mapbox</v-chip>
+        <v-chip class="mr-b mt-2">User Experience (UX)</v-chip>
+        <v-chip class="mr-b mt-2">Figma</v-chip>
+        <v-chip class="mr-b mt-2 light-blue">View More</v-chip>
+      </div>
+    </div>
+    <div id="section-2" class="section-2 wow slideInLeft" >
+      <v-container>
+        <div class="pa-5 d-flex align-center justify-center mt-10" style="flex-flow:column" data-aos="fade-up">
+          <h2>Product Highlight - Dash Spatia</h2>
+          <div class="blueLine my-5" 
+      data-aos="flip-right"></div>
+
+
+          <div style="max-width: 800px">
+            <center>Dash is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
+          </div>
+        </div>
+      </v-container>
+
+      <v-container class="mt-0 pt-0">
+      
+        <v-row>
+          <v-col>
+      <v-sheet
+          class="mx-auto"
+          style="border-radius:20px"
+          elevation="8"
+        >
+          <v-slide-group
+            v-model="model"
+            class="pa-4"
+            active-class="success"
+            show-arrows
+          >
+            <v-slide-item
+              v-for="n in 6"
+              :key="n"
+              v-slot="{ active }"
+            >
+              <v-card
+                :color="active ? undefined : 'grey lighten-1'"
+                class="ma-4"
+                width="300"
+              >
+              <img :src="'/img/'+n+'.jpg'" width="100%"/>
+              </v-card>
+            </v-slide-item>
+          </v-slide-group>
+        </v-sheet>
+
+        <div class="d-flex justify-center mt-5">
+          <v-btn class="light-blue--text mt-3" rounded style="width:250px" href="https://spatia.id" target="_blank">DISCOVER DASH SPATIA <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+        </div>
+        </v-col>
+      </v-row>
+      </v-container>
+      
+
+    </div>
+
+    <div class="menupadSection  pt-10 pb-10">
+        <div class="section-2 wow slideInLeft">
+          <v-container>
+            <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
+              <h2>Product Highlight - Menupad</h2>
+              <div class="blueLine my-5"  data-aos="flip-right"></div>
+              <div style="max-width: 800px"  data-aos="fade-up">
+                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Unlike print menus which are hard to see on small screens. Direct your customers to digital menus specially designed for smartphone screens.
+
+                This menu can be accessed via a QR code, or via a link on your social media profile.</center>
+              </diV>
+            </div>
+          </v-container>
+        </div>
+        
+      <v-container>
+        <v-row>
+          <v-col>
+          <v-sheet
+          data-aos="fade-up"
+              class="mx-auto elevation-0"
+              elevation="8"
+              style="background-color: transparent;"
+            >
+              <v-slide-group
+                v-model="model"
+                active-class="success"
+                show-arrows
+              >
+                <v-slide-item
+                  v-for="n in 8"
+                  :key="n"
+                >
+                  <v-card
+                    class="ma-4 elevation-0"
+                      width="175"
+                      style="background-color:transparent"
+                  >
+                  <img :src="'/img/m'+n+'.png'" width="100%"/>
+                  </v-card>
+                </v-slide-item>
+              </v-slide-group>
+            </v-sheet>
+            
+        <div class="d-flex justify-center my-5">
+          <v-btn class="light-blue--text mt-3" rounded style="width:250px" href="https://menupad.link" target="_blank">DISCOVER MENUPAD <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+        </div>
+          </v-col>
+          </v-row>
+        </v-container>
     </div>
 
 
@@ -186,7 +226,7 @@ $light-blue-lighten-2:#4FC3F7;
   z-index:50 !important;    
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
   border-bottom:2px solid #000000;
 }
 
@@ -219,6 +259,14 @@ $light-blue-lighten-2:#4FC3F7;
     color:#fff !important; text-decoration: none;
   }
 }
+
+.blueLine {
+  height:10px;
+  width:300px;
+  border-radius:20px;
+  background: linear-gradient(90.02deg, #2986AD -10.31%, #144865 114.18%);
+}
+
 
 .buttonScaled {
   &:hover {
@@ -272,7 +320,7 @@ $light-blue-lighten-2:#4FC3F7;
 
 .mainSection {
   width:100%;
-  margin-top:150px;
+  margin-top:120px;
   overflow:hidden;
   padding-top:50px;
   padding-bottom:50px;
@@ -285,10 +333,27 @@ $light-blue-lighten-2:#4FC3F7;
   font-size:3em;
 }
 .iconButton {
-  margin-right:10px;
+  background-color:#000000;
+  padding:5px;
+  width:30px;
+  border-radius:5px;
+  height: 30px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  margin-right:15px;
   opacity:0.6;
+  border:1px solid #000000;
+  .v-icon {
+    font-size:1em;
+  }
+  img {
+    width:17px;
+  }
   &:hover {
     opacity:1;
+    border:1px solid $light-blue-lighten-2;
+
   }
 }
 
