@@ -44,7 +44,7 @@
                   <div class="d-flex justify-center" style="width:100%;bottom:-30px;position:absolute;z-index:20">
                     <v-color-picker
                       v-model="boxShadowColor"
-                      :style="'width:100%;max-width:200px'"
+                      :style="'width:200px'"
                       class="ma-2"
                       hide-canvas
                       hide-inputs
