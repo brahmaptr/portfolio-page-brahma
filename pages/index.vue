@@ -1,10 +1,9 @@
 <template>
   <div>
-    <div class="navbarPersonal" :class="{'change_color': scrollPosition > 50}">
+    <div class="navbarPersonal" :style="'box-shadow: 0 0 300px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 250}">
       <v-container>
       <div class="d-flex justify-space-between align-center" >
-              <div v-if="$vuetify.breakpoint.smAndDown"></div>
-              <div class="logo" v-if="!$vuetify.breakpoint.smAndDown"></div>
+              <div class="logo"></div>
               <div v-if="$vuetify.breakpoint.smAndDown">
                 <v-btn
                   color="cyan"
@@ -76,12 +75,94 @@
       </v-container>
     </div>
 
+    <div>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+      ad<br/>
+    </div>
+
 
   </div>
 </template>
 
 <style scoped lang="scss">
 $cyan:#00BCD4;
+$light-blue-lighten-2:#4FC3F7;
 
 .flexGrow {
   flex-grow: 1 !important;
@@ -95,13 +176,24 @@ $cyan:#00BCD4;
 }
 
 .navbarPersonal {
+  background-color:rgba(0,0,0,0.8);
   position:fixed;
   display:flex;
   align-items: center;
   top:0;
   width:100%;
-  height:80px;
-  z-index:999;
+  height:60px;
+  z-index:50 !important;    
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.5s ease-in-out;
+  border-bottom:2px solid #000000;
+}
+
+
+.navbarScroll{
+  box-shadow: none !important;
+  border-bottom:2px solid rgba(79,195,247,0.3);
 }
 
 .navMenus {
@@ -136,10 +228,11 @@ $cyan:#00BCD4;
   }
 }
 
+
 .logo {
   background:url('/img/logo-long.png') no-repeat;
   background-size: contain;
-  width:150px;
+  width:140px;
   height:30px;
   transition:0.2s;
   cursor:pointer;
@@ -147,8 +240,8 @@ $cyan:#00BCD4;
   transition:0.2s;
     background:url('/img/logo-light.png') no-repeat;
     background-size: contain;
-  width:150px;
-  height:30px;
+    width:140px;
+    height:30px;
   }
 }
 
@@ -209,7 +302,7 @@ $cyan:#00BCD4;
 }
 
 .marginTopMobile {
-  margin-top:20px;
+  margin-top:70px;
 }
 
 .updownAnimated 
