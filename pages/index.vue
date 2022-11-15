@@ -258,8 +258,8 @@
 
 
     <div class="text-center">
-      <iframe class="mr-5 bsGlow"  src="https://ev-routing.netlify.app/ev/current-profile" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
-      <iframe  class="bsGlow" src="https://ev-routing.netlify.app/ev/isochrone" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
+      <iframe class="mr-5 bsGlow"  src="https://ev-routing.netlify.app/current-profile" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
+      <iframe  class="bsGlow" src="https://ev-routing.netlify.app/isochrone" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
     </div>
 
 
