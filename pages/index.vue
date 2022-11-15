@@ -249,19 +249,14 @@
           </div>
 
           <div style="max-width: 800px">
-            <div class="text-center">PLN partnered with Cityplan to build the future Electric Vehicle (EV) Ecosystem. We have proposing a several apps and analytical ideas. This is one of our early prototype, a smart routing plan considering multiple factos of EV. Prototype below is interactive.</div>
+            <div class="text-center">Cityplan interested to build the future of Electric Vehicle (EV) Ecosystem. We have researching several apps and analytical ideas. This is one of our early prototype, a smart routing plan considering multiple factos of EV.</div>
           </div>
+
+          <img src="/img/ev.png" style="max-width:650px; width:100%;" class="my-5"/>
         </div>
       </v-col>
       </v-row>
       </v-container>
-
-
-    <div class="text-center">
-      <iframe class="mr-5 bsGlow"  src="https://ev-routing.netlify.app/current-profile" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
-      <iframe  class="bsGlow" src="https://ev-routing.netlify.app/isochrone" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
-    </div>
-
 
     <v-container>
       <div class=" pa-10 d-flex align-center justify-center viewProjectCta mb-10">
