@@ -10,7 +10,9 @@
   font-family: 'Inter', sans-serif !important ;
   scroll-behavior: smooth;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 .v-color-picker__dot {
     display: none !important;
@@ -25,6 +27,27 @@
   .v-color-picker__hue {
     margin-bottom:0 !important;
   }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2f2f2f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #296177;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 140, 255);
+}
+
 </style>
 
 

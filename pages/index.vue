@@ -3,7 +3,7 @@
     <div class="navbarPersonal" :style="'box-shadow: 0 0 200px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 50}">
       <v-container>
       <div class="d-flex justify-space-between align-center" >
-              <div class="logo"></div>
+              <div class="logo" @click="scrollTo('#')"> </div>
               <div v-if="$vuetify.breakpoint.smAndDown">
                 <v-btn
                   color="cyan"
@@ -15,13 +15,13 @@
                 </v-btn>
               </div>
               <div v-else class="navMenus d-flex align-center grey--text text--lighten-1">
-                <div class="mr-5" href="#section-2">Highlight</div>
-                <div class="mr-5" href="#section-2">Background</div>
-                <div class="mr-5" @click="contact=true">Projects</div>
-                <div class="mr-5" @click="contact=true">Publication</div>
-                <div class="mr-5" @click="contact=true">Competition</div>
+                <div class="mr-5" @click="scrollTo('#highlight')">Highlight</div>
+                <div class="mr-5" @click="scrollTo('#background')">Background</div>
+                <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
+                <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
+                <div class="mr-5" @click="scrollTo('#projects')">Projects</div>
               </div>
-              <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn class="buttonScaled" small outlined color="light-blue lighten-2" @click="contact=true"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
+              <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
           </div>
         </v-container>
     </div>
@@ -62,11 +62,10 @@
                     <div class="mb-2">Hi! I'm Senior Front-End Developer of <span class="hoverToLink">Cityplan Indonesia</span>.</div>
                     <div>I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
                     <div class="d-flex align-center mt-5">
-                      <div class="mr-4"><v-btn outlined small><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
-                      <div class="iconButton"><v-icon>mdi-linkedin</v-icon></div>
-                      <div class="iconButton"><v-icon>mdi-github</v-icon></div>
-                      <div class="iconButton d-flex align-center justify-center"><img src="/img/freelancer.png" width="25px"></div>
-                      <div class="iconButton d-flex align-center justify-center"><img src="/img/medium.png" width="25px"></div>
+                      <div class="mr-4"><v-btn outlined small @click="contactDialog=true"><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
+                      <div class="iconButton" @click="scrollTo('https://github.com/brahmaputra7','blank')"><v-icon>mdi-github</v-icon></div>
+                      <div class="iconButton d-flex align-center justify-center" @click="scrollTo('https://brahmaputra1996.medium.com/','blank')"><img src="/img/medium.png" width="25px"></div>
+                      <div class="iconButton" @click="scrollTo('https://www.linkedin.com/in/brahmaputra7/','blank')"><v-icon>mdi-linkedin</v-icon></div>
                     </div>
                   </div>
               </div>
@@ -90,10 +89,10 @@
         <v-chip class="mr-b mt-2">Mapbox</v-chip>
         <v-chip class="mr-b mt-2">User Experience (UX)</v-chip>
         <v-chip class="mr-b mt-2">Figma</v-chip>
-        <v-chip class="mr-b mt-2 light-blue">View More</v-chip>
+        <v-chip @click="skillsDialog=true" class="mr-b mt-2 light-blue">View More</v-chip>
       </div>
     </div>
-    <div id="section-2" class="section-2" >
+    <div id="highlight" class="section-2" >
 
       <v-container>
         <v-row>
@@ -108,7 +107,7 @@
           </div>
 
           <div style="max-width: 800px">
-            <center>A product of Cityplan Indonesia. <b>Dash spatia</b> is a product that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
+            <div class="text-center"><b>Dash spatia</b> is a product of <i>cityplan</i> that helps user analyzing spatial data with multiple tools. <div class="my-2" v-if="$vuetify.breakpoint.smAndDown"></div> Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</div>
           </div>
         </div>
       </v-col>
@@ -128,6 +127,7 @@
             v-model="model"
             class="pa-4"
             show-arrows
+            active-class="success"
           >
             <v-slide-item
               v-for="n in 6"
@@ -190,7 +190,7 @@
           <v-container>
             <div class="d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
               <div style="max-width: 800px"  data-aos="fade-up">
-                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Direct your customers to digital menus specially designed for smartphone screens.
+                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. <div class="my-2" v-if="$vuetify.breakpoint.smAndDown"></div>  Direct your customers to digital menus specially designed for smartphone screens.  <div class="my-2" v-if="$vuetify.breakpoint.smAndDown"></div>
 
                 This menu can be accessed via a QR code, or via a link on your social media profile.</center>
               </diV>
@@ -228,7 +228,7 @@
             </v-sheet>
             
         <div class="d-flex justify-center my-5">
-          <v-btn class="red--text mt-3" rounded style="width:250px" href="https://menupad.link" target="_blank">DISCOVER MENUPAD <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+          <v-btn class="red--text mt-3" rounded href="https://menupad.link" target="_blank">DISCOVER MENUPAD (DEPRECATED)<v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
         </div>
           </v-col>
           </v-row>
@@ -237,12 +237,13 @@
 
     <v-container>
       <div class=" pa-10 d-flex align-center justify-center viewProjectCta mb-10">
-        <v-btn class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+        <v-btn v-if="!$vuetify.breakpoint.smAndDown" class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+        <v-btn v-else small class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
       </div>
     </v-container>
     
 
-  <v-container>
+  <v-container id="background">
     <v-row>
       <v-col>
         <div class="text-center mb-5">
@@ -252,9 +253,6 @@
         </div>
         <div class="text-center">
           
-          <h3>
-            Work Experience
-          </h3>
         </div>
         <div class="d-flex justify-center">
           
@@ -263,77 +261,135 @@
               align-top
               dense
             >
+
           <v-timeline-item
               color="pink"
-              small
-            >
-               <div>asdasd</div>
-            </v-timeline-item>
+              >
+            <h3>
+              Work Experience
+            </h3>
+          </v-timeline-item>
 
-            <v-timeline-item
-              color="teal lighten-3"
-              small
-            > 
-              <v-row class="pt-1">
-                <v-col cols="3">
-                  <strong>3-4pm</strong>
-                </v-col>
-                <v-col>
-                  <strong>Design Stand Up</strong>
-                  <div class="text-caption mb-2">
-                    Hangouts
-                  </div>
-                  <v-avatar>
-                    <v-img
-                      src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairFrida&accessoriesType=Kurt&hairColor=Red&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcitedNatural&mouthType=Disbelief&skinColor=Brown"
-                    ></v-img>
-                  </v-avatar>
-                  <v-avatar>
-                    <v-img
-                      src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&accessoriesType=Prescription02&hairColor=Black&facialHairType=MoustacheMagnum&facialHairColor=BrownDark&clotheType=BlazerSweater&clotheColor=Black&eyeType=Default&eyebrowType=FlatNatural&mouthType=Default&skinColor=Tanned"
-                    ></v-img>
-                  </v-avatar>
-                  <v-avatar>
-                    <v-img
-                      src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairMiaWallace&accessoriesType=Sunglasses&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Surprised&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Pale"
-                    ></v-img>
-                  </v-avatar>
-                </v-col>
-              </v-row>
-            </v-timeline-item>
-
-            <v-timeline-item
+          <v-timeline-item
               color="pink"
+              hide-dot
               small
             >
-              <v-row class="pt-1">
-                <v-col cols="3">
-                  <strong>12pm</strong>
-                </v-col>
-                <v-col>
-                  <strong>Lunch break</strong>
-                </v-col>
-              </v-row>
+            <div class="d-flex" style="flex-flow:row wrap">
+              <img width="60px" class="mr-5" src="/img/cityplan.png" style="border-radius:20px"/>
+                <div  style="flex-flow:row wrap">
+                <div style="font-size:1.3em" class="mb-2"><b>Cityplan Indonesia</b></div>
+                <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>JUN 2018 - Present </v-chip> Software Engineer, Front-End </div>
+                </div>
+              </div>
+            </v-timeline-item>
+          
+            
+          <v-timeline-item
+              color="yellow"
+              center
+              small
+              hide-dot
+            >
+            <div class="d-flex"  style="flex-flow:row wrap">
+             <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/esdm.png" style="border-radius:20px"/></div>
+              <div>
+               <div style="font-size:1.3em" class="mb-2"><b>Ministry of Energy and Mineral Resource</b></div>
+               <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>OCT 2016 - FEB 2017 </v-chip>Software Engineer (Internship)</div>
+              </div>
+            </div>
+
             </v-timeline-item>
 
             <v-timeline-item
-              color="teal lighten-3"
-              small
-            >
-              <v-row class="pt-1">
-                <v-col cols="3">
-                  <strong>9-11am</strong>
-                </v-col>
-                <v-col>
-                  <strong>Finish Home Screen</strong>
-                  <div class="text-caption">
-                    Web App
-                  </div>
-                </v-col>
-              </v-row>
+              class="mt-3">
+              <h3>
+                Education
+              </h3>
             </v-timeline-item>
+
+            <v-timeline-item
+                color="pink"
+                center
+                small
+                hide-dot
+              >
+                <div class="d-flex" style="flex-flow:row wrap">
+                  <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/upi.svg" style="border-radius:20px"/></div>
+                    <div  style="flex-flow:row wrap">
+                    <div style="font-size:1.3em" class="mb-2"><b>Indonesia University of Education</b></div>
+                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>JUL 2013 - DEC 2017 </v-chip> Computer Science </div>
+                    </div>
+                  </div>
+              </v-timeline-item>
+
+              
+            <v-timeline-item
+                color="green"
+              class="mt-3">
+              <h3>
+                Training
+              </h3>
+            </v-timeline-item>
+
+            <v-timeline-item
+                color="pink"
+                center
+                small
+                hide-dot
+              >
+                <div class="d-flex" style="flex-flow:row wrap">
+                  <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/treehouse.png" style="border-radius:20px"/></div>
+                    <div  style="flex-flow:row wrap">
+                    <div style="font-size:1.3em" class="mb-2"><b>Front-End Web Development</b></div>
+                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>2018</v-chip> Teamtreehouse.com </div>
+                    </div>
+                  </div>
+              </v-timeline-item>
+
+              <v-timeline-item
+                  color="pink"
+                  center
+                  small
+                  hide-dot
+                >
+                  <div class="d-flex" style="flex-flow:row wrap">
+                    <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/treehouse.png" style="border-radius:20px"/></div>
+                      <div  style="flex-flow:row wrap">
+                      <div style="font-size:1.3em" class="mb-2"><b>VueJS</b></div>
+                      <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>2018</v-chip> Teamtreehouse.com </div>
+                      </div>
+                    </div>
+                </v-timeline-item>
+
+                
+
+                <v-timeline-item
+                    color="pink"
+                    center
+                    small
+                    hide-dot
+                  >
+                    <div class="d-flex" style="flex-flow:row wrap">
+                      <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/google.png" style="border-radius:20px"/></div>
+                        <div  style="flex-flow:row wrap">
+                        <div style="font-size:1.3em" class="mb-2"><b>UX Design</b></div>
+                        <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>Ongoing</v-chip> Google UX Professional Certification</div>
+                        </div>
+                      </div>
+                  </v-timeline-item>
+            
           </v-timeline>
       </div>
+
+      <!------->
+      <div class="text-center mt-10">
+          
+        </div>
+        <div class="d-flex justify-center">
+          
+      </div>
+
       </v-col>
     </v-row>
   </v-container>
@@ -346,7 +402,7 @@
     </div>
   </v-container>
 
-  <v-container>
+  <v-container  id="publication">
     <v-row>
       <v-col>
         <div class="text-center mb-5">
@@ -355,41 +411,41 @@
           </h1>
         </div>
         <div class="d-flex justify-center">
-          <div style="max-width:600px">
-              <div class="mb-5">
+          <div style="max-width:800px">
+              <div class="mb-5 grey darken-4 pa-3 rounded-lg">
                   <b class="publicationLink" @click="goToLink('https://jestec.taylors.edu.my/Vol%2014%20issue%201%20February%202019/14_1_34.pdf')">Data-to-Text for Generating Information of Weather and Air Quality in the R Programming Language
                   </b>
-                  <div>
+                  <div style="font-size:0.8em">
                     Journal of Engineering Science and Technology<br/>
                     Vol. 14, No. 1 (2019) 498 - 508<br/>
                     © School of Engineering, Taylor’s University
                   </div>
               </div>
-              <div class="mb-5 ">
+              <div class="mb-5 grey darken-4 pa-3 rounded-lg">
                 <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/building-map-based-web-application-using-nuxt-and-mapbox-ba758eaa8594?source=user_profile---------3----------------------------')">Building Map-Based Web Application using Nuxt and Mapbox
                   </b>
-                  <div>
+                  <div style="font-size:0.8em">
                     Medium Article
                   </div>
               </div>
-              <div class="mb-5">
+              <div class="mb-5 grey darken-4 pa-3 rounded-lg">
                 <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/using-autoai-from-ibm-clouds-watson-studio-to-predict-it-professionals-yearly-salary-in-the-295a94c5c27a?source=user_profile---------1----------------------------')">Using IBM’s AutoAI: How I build a salary prediction system
                   </b>
-                  <div>
+                  <div style="font-size:0.8em">
                     Medium Article
                   </div>
               </div>
-              <div  class="mb-5">
+              <div class="mb-5 grey darken-4 pa-3 rounded-lg">
                 <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/moving-towards-a-goal-5-reasons-ibm-cloud-developer-certification-can-escalate-your-career-adf1fc3e2987?source=user_profile---------0----------------------------')">Moving Towards a Goal — 5 Reasons IBM Cloud Developer Certification can escalate your career
                   </b>
-                  <div>
+                  <div style="font-size:0.8em">
                     Medium Article
                   </div>
               </div>
-              <div>
+              <div class="mb-5 grey darken-4 pa-3 rounded-lg">
                 <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/client-side-pdf-generation-if-you-struggled-with-dynamic-content-positioning-in-jspdf-459aef48dc30')">Client-side PDF Generation: If you struggled with dynamic content positioning in jsPdf
                   </b>
-                  <div>
+                  <div style="font-size:0.8em">
                     Medium Article
                   </div>
               </div>
@@ -408,34 +464,37 @@
   </v-container>
 
 
-  <v-container>
+  <v-container id="competition">
     <v-row>
       <v-col>
         <div class="text-center mb-5">
           <h1 class="mb-3">
             Competition<span class="ml-3"><v-icon  :style="'color:'+boxShadowColor">mdi-trophy</v-icon></span>
           </h1>
-          <img src="/img/award.png" width="100%" style="max-width:600px"/>
+          <img src="/img/award.png" width="100%" style="max-width:800px"/>
         </div>
         <div class="d-flex justify-center">
-          <div style="max-width:600px">
-              <div class="mb-5">
+          <div style="max-width:800px">
+              <div  class="mb-5 grey darken-4 pa-3 rounded-lg">
+                <v-chip small class="success darken-4 mr-2 d-flex justify-center mb-2" style="width:fit-content"> <v-icon small class="mr-2">mdi-trophy</v-icon> 3rd Place Winner</v-chip>
                   <div class="d-flex align-center"> 
-                    <v-chip x-small class="orange darken-3 mr-2 d-flex justify-center">3rd Place Winner</v-chip> <b>IBM Cloud Data Challenge – Outcome Prediction using AutoAI</b>
+                     <b>IBM Cloud Data Challenge – Outcome Prediction using AutoAI</b>
                   </div>
                   <div>Building Techpath: a salary prediction app using IT Salary Survey for EU region dataset with CRISP-DM Methodology, Utilizing AutoAI from IBM Watson Studio.</div>
               </div>
-              <div class="mb-5" >
+              <div  class="mb-5 grey darken-4 pa-3 rounded-lg" >
+                <v-chip small class="red darken-4 mr-2 d-flex justify-center mb-2" style="width:fit-content"><v-icon small class="mr-2">mdi-medal</v-icon> Top 30</v-chip>
                 <div class="d-flex align-center">
-                  <v-chip x-small class="orange darken-3 mr-2 d-flex justify-center"  style="width:100px">Top 30</v-chip> <b>Republic of IOT (RIOT) Product Innovation 2017</b>
+                  <b>Republic of IOT (RIOT) Product Innovation 2017</b>
                 </div>
                   <div>
                     Creating E-Breeding:  a tool for detecting the time of estrus in cattle to optimize animal husbandry based on physical signal analysis. 
                   </div>
               </div>
-              <div class="mb-5" >
+              <div class="mb-5 grey darken-4 pa-3 rounded-lg">
+                <v-chip small class="blue darken-4 mr-2 d-flex justify-center mb-2" style="width:fit-content">Participant</v-chip>
                 <div class="d-flex align-center">
-                  <v-chip x-small class="orange darken-3 mr-2 d-flex justify-center"  style="width:100px">Participant</v-chip> <b>Microsoft Imagine Cup - Innovative Category Compoetition</b>
+                  <b>Microsoft Imagine Cup - Innovative Category Compoetition</b>
                 </div>
                   <div>
                     Creating AMERA Parental Control prototype: A monitoring web/mobile app that integrates with school system to montior student behaviour and development.
@@ -458,8 +517,177 @@
     </v-card>
   </v-dialog>
   
+  
+  <v-dialog v-model="contactDialog" width="500px">
+    <v-card class="pa-3">
+      <div class="d-flex justify-end"><v-icon @click="contactDialog=false">mdi-close</v-icon></div>
+      <div class="pa-2"><v-btn class="mr-2 primary" @click="mailTo()"><v-icon>mdi-email</v-icon></v-btn> brahmaputra1996@gmail.com</div>
+      <div class="pa-2"><v-btn class="mr-2 success darken-3" @click="scrollTo('https://wa.me/085862266465','blank')"><v-icon>mdi-whatsapp</v-icon> </v-btn>+62-858-6226-6465</div>
+    </v-card>
+  </v-dialog>
+
+  
+  <v-dialog v-model="skillsDialog" width="500px">
+    <v-card class="pa-3">
+      <div class="d-flex justify-end"><v-icon @click="skillsDialog=false">mdi-close</v-icon></div>
+
+     <div class="mb-2"><b>Technical Skills</b></div>
+
+     Front-End Development<br/>
+
+     <div class="mb-2">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Expert with Modern Front-End Framework
+      <div class="pl-5">
+          <v-chip small>VueJS</v-chip>
+          <v-chip small>NuxtJS</v-chip>  
+      </div>      
+    </div>
+
+    
+    <div class="mb-2">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>FE Production Concept
+      <div class="pl-5">
+          <v-chip small>SPA</v-chip>
+          <v-chip small>SSR</v-chip>  
+          <v-chip small>SSG</v-chip>  
+      </div>      
+    </div>
+
+    
+    <div class="mb-2">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>UI Framework
+      <div class="pl-5">
+          <v-chip small>Vuetify</v-chip>
+          <v-chip small>Tailwind CSS</v-chip>
+      </div>      
+    </div>
+    
+    <div  class="mb-5">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Automated Testing
+      <div class="pl-5">
+          <v-chip small>Jest</v-chip>
+      </div>      
+    </div>
+
+    
+    Work Environment<br/>
+    
+    <div  class="mb-2">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Version Control System
+      <div class="pl-5">
+          <v-chip small>Github</v-chip>
+      </div>      
+    </div>
+    
+    <div  class="mb-5">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Package Manager
+      <div class="pl-5">
+          <v-chip small>NPM</v-chip>
+      </div>      
+    </div>
+    
+    
+    
+    UX Design<br/>
+    
+    <div  class="mb-2">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Design Tools
+      <div class="pl-5">
+          <v-chip small>Figma</v-chip>
+      </div>      
+    </div>
+    
+    <div  class="mb-5">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Low/High-Fidelity prototyping
+
+    </div>
+    
+    
+    Geospatial Information System<br/>
+    
+    <div  class="mb-2">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Map Engine
+      <div class="pl-5">
+          <v-chip small>Mapbox</v-chip> <v-chip small>Arcgis Javascript</v-chip>  <v-chip small>Google Maps</v-chip>
+      </div>      
+    </div>
+    
+    <div  class="mb-5">
+      <v-icon small class="mr-2">mdi-check-circle</v-icon>Spatial Operation
+      <div class="pl-5">
+          <v-chip small>Turf</v-chip> 
+      </div>      
+
+    </div>
+    
+    
+
+
+    </v-card>
+  </v-dialog>
+
+
+  <div class="text-center pa-3 pb-10 grey--text">2022. @brahmaptr</div>
   </div>
 </template>
+
+<script>
+
+import "@lottiefiles/lottie-player";
+import Logo from '~/components/Logo.vue'
+import VuetifyLogo from '~/components/VuetifyLogo.vue'
+
+export default {
+  components: {
+    Logo,
+    VuetifyLogo
+  },
+  data(){
+    return {
+      scrollPosition:null,
+      boxShadowColor: '#00E2FFFF',
+      model:0,
+      currentImg:'',
+      previewType:'',
+      previewImgDialog:false,
+      contactDialog:false,
+      skillsDialog:false
+    }
+  },
+  created(){
+    this.scrollTo('#','')
+  },  
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
+  },
+  methods:{
+    
+    updateScroll() {
+       this.scrollPosition = window.scrollY
+    },
+    previewImg(val,type){
+      this.previewType = type
+      this.previewImgDialog = true
+      console.log(this.previewImgDialog)
+      this.currentImg = val
+    },
+    goToLink(val){
+      window.open(val, '_blank');
+    },
+    scrollTo(val,target){
+      if(target=='blank'){
+        window.open(val, '_blank');
+      }else{
+        window.location.href=val
+      }
+    },
+    mailTo(){
+      window.location.href = "mailto:brahmaputra1996@gmail.com?subject=Hello&body=message";
+    }
+  }
+}
+</script>
+
 
 <style scoped lang="scss">
 $cyan:#00BCD4;
@@ -594,6 +822,7 @@ $light-blue-lighten-2:#4FC3F7;
   font-size:3em;
 }
 .iconButton {
+  cursor:pointer;
   background-color:#000000;
   padding:5px;
   width:30px;
@@ -708,47 +937,14 @@ $light-blue-lighten-2:#4FC3F7;
   .nameText {
     font-size:2em;
   }
+
+  
+.viewProjectCta {
+  background:url('/img/tes.png');
+  background-size:cover;
+  border-radius:20px;
+  padding:20px !important;
+}
+
 }
 </style>
-
-<script>
-
-import "@lottiefiles/lottie-player";
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
-  data(){
-    return {
-      scrollPosition:null,
-      boxShadowColor: '#00E2FFFF',
-      model:0,
-      currentImg:'',
-      previewType:'',
-      previewImgDialog:false
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.updateScroll);
-  },
-  methods:{
-    
-    updateScroll() {
-       this.scrollPosition = window.scrollY
-    },
-    previewImg(val,type){
-      this.previewType = type
-      this.previewImgDialog = true
-      console.log(this.previewImgDialog)
-      this.currentImg = val
-    },
-    goToLink(val){
-      window.open(val, '_blank');
-    }
-  }
-}
-</script>
