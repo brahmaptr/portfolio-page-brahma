@@ -59,7 +59,7 @@
                     <div class="d-flex align-start" style="position:relative">
                       <div class="nameText mr-2">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
-                    <div class="mb-2">Hi! I'm Senior Front-End Developer of Cityplan Indonesia.</div>
+                    <div class="mb-2">Hi! I'm Senior Front-End Developer of <span class="hoverToLink">Cityplan Indonesia</span>.</div>
                     <div>I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
                     <div class="d-flex align-center mt-5">
                       <div class="mr-4"><v-btn outlined small><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
@@ -108,7 +108,7 @@
           </div>
 
           <div style="max-width: 800px">
-            <center><b>Dash spatia</b> is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
+            <center>A product of Cityplan Indonesia. <b>Dash spatia</b> is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
           </div>
         </div>
       </v-col>
@@ -139,11 +139,24 @@
                 class="ma-4"
                 width="300"
               >
-              <img :src="'/img/'+n+'.jpg'" width="100%"/>
+              <img :src="'/img/'+n+'.jpg'" width="100%"  @click="previewImg('/img/'+n+'.jpg')"/>
               </v-card>
             </v-slide-item>
           </v-slide-group>
         </v-sheet>
+
+        <div class="d-flex justify-center mt-5">
+          As used by<br/>
+        </div>
+
+        <div class="asUsedBy d-flex justify-center align-center mt-5">
+          <div><img class="mr-5" src="/img/rhr.png" width="100px"></div>
+          <div><img class="mr-5" src="/img/kita.png" width="100px"></div>
+          <div><img class="mr-5" src="/img/lion.png" width="120px"></div>
+          <div><img class="mr-5" src="/img/astro.png" width="120px"></div>
+          <div><img class="mr-5" src="/img/btn.png" width="120px"></div>
+          <div><img class="mr-5" src="/img/flash.png" width="120px"></div>
+        </div>
 
         <div class="d-flex justify-center mt-5">
           <v-btn class="purple--text mt-3 text--lighten-2" rounded style="width:250px" href="https://spatia.id" target="_blank">DISCOVER DASH SPATIA <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
@@ -204,6 +217,7 @@
                     class="ma-4 elevation-0"
                       width="175"
                       style="background-color:transparent"
+                      
                   >
                   <img :src="'/img/m'+n+'.png'" width="100%"/>
                   </v-card>
@@ -284,6 +298,14 @@
     </v-row>
   </v-container>
 
+  <v-dialog v-model="previewImgDialog" max-width="1000px">
+    <v-card>
+      <div style="max-width:1000px;">
+        <img :src="currentImg" width="100%"/>
+      </div>
+    </v-card>
+  </v-dialog>
+  
   </div>
 </template>
 
@@ -464,6 +486,28 @@ $light-blue-lighten-2:#4FC3F7;
   z-index:0;
 }
 
+.asUsedBy {
+  div {
+    flex-shrink:0 !important; 
+    img {
+      cursor:pointer;
+      transition:0.2s;
+      opacity:0.7;
+      &:hover {
+        opacity:1;
+        transform:scale(1.1);
+      }
+    }
+  }
+  width:100%;flex-flow:row wrap;
+}
+
+.hoverToLink {
+  &:hover {
+    background-color:$light-blue-lighten-2;
+  }
+}
+
 @keyframes MoveUpDown {
   0%, 100% {
     bottom: 0;
@@ -506,8 +550,10 @@ export default {
     return {
       scrollPosition:null,
       boxShadowColor: '#00E2FFFF',
-      model:0
-    } 
+      model:0,
+      currentImg:'',
+      previewImgDialog:false
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
@@ -516,6 +562,11 @@ export default {
     
     updateScroll() {
        this.scrollPosition = window.scrollY
+    },
+    previewImg(val){
+      this.previewImgDialog = true
+      console.log(this.previewImgDialog)
+      this.currentImg = val
     }
   }
 }
