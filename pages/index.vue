@@ -235,6 +235,34 @@
         </v-container>
     </div>
 
+
+    <v-container>
+        <v-row>
+          <v-col>
+        <div class="d-flex align-center justify-center mt-10" style="flex-flow:column" data-aos="fade-up">
+          <div class="blueLine mb-9"></div>
+
+          <v-chip small outlined class="cyan cyan--text cyan--lighten-2 mb-3">PROTOTYPE HIGHLIGHT</v-chip>
+
+          <div class="mb-3" style="font-size:1.1em;letter-spacing:2px">
+           CITYPLAN EV SOLUTION
+          </div>
+
+          <div style="max-width: 800px">
+            <div class="text-center">PLN partnered with Cityplan to build the future Electric Vehicle (EV) Ecosystem. We have proposing a several apps and analytical ideas. This is one of our early prototype, a smart routing plan considering multiple factos of EV. Prototype below is interactive.</div>
+          </div>
+        </div>
+      </v-col>
+      </v-row>
+      </v-container>
+
+
+    <div class="text-center">
+      <iframe class="mr-5 bsGlow"  src="https://dev.cityplan.id/ev/current-profile" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
+      <iframe  class="bsGlow" src="https://dev.cityplan.id/ev/isochrone" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
+    </div>
+
+
     <v-container>
       <div class=" pa-10 d-flex align-center justify-center viewProjectCta mb-10">
         <v-btn v-if="!$vuetify.breakpoint.smAndDown" class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
@@ -626,8 +654,6 @@
     </v-card>
   </v-dialog>
   
-  
-      
   <v-navigation-drawer
         v-model="drawer"
         v-if="drawer"
@@ -943,6 +969,10 @@ $light-blue-lighten-2:#4FC3F7;
   div {
     padding:10px;
   }
+}
+
+.bsGlow {
+  box-shadow: 0px 8px 13px 4px rgba(0, 209, 255, 0.25);
 }
 
 @keyframes MoveUpDown {
