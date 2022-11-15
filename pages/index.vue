@@ -19,7 +19,7 @@
                 <div class="mr-5" @click="scrollTo('#background')">Background</div>
                 <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
                 <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
-                <div class="mr-5" @click="scrollTo('#projects')">Projects</div>
+                <div class="mr-5" @click="$router.push('/project')">Projects</div>
               </div>
               <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
           </div>
@@ -59,7 +59,7 @@
                     <div class="d-flex align-start" style="position:relative">
                       <div class="nameText mr-2">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
-                    <div class="mb-2">Hi! I'm Senior Front-End Developer of <span class="hoverToLink">Cityplan Indonesia</span>.</div>
+                    <div class="mb-2">Hi! I'm Senior Front-End Developer of <span class="hoverToLink" @click="scrollTo('https://cityplan.id','blank')">Cityplan Indonesia</span>.</div>
                     <div>I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
                     <div class="d-flex align-center mt-5">
                       <div class="mr-4"><v-btn outlined small @click="contactDialog=true"><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
@@ -132,7 +132,7 @@
             <v-slide-item
               v-for="n in 6"
               :key="n"
-              v-slot="{ active }"
+              v-slot="{  }"
             >
               <v-card
                 class="ma-4"
@@ -239,7 +239,7 @@
     <v-container>
         <v-row>
           <v-col>
-        <div class="d-flex align-center justify-center mt-10" style="flex-flow:column" data-aos="fade-up">
+        <div class="d-flex align-center justify-center " style="flex-flow:column" data-aos="fade-up">
           <div class="blueLine mb-9"></div>
 
           <v-chip small outlined class="cyan cyan--text cyan--lighten-2 mb-3">PROTOTYPE HIGHLIGHT</v-chip>
@@ -260,8 +260,8 @@
 
     <v-container>
       <div class=" pa-10 d-flex align-center justify-center viewProjectCta mb-10">
-        <v-btn v-if="!$vuetify.breakpoint.smAndDown" class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
-        <v-btn v-else small class="light-blue darken-4" rounded outlined 
+        <v-btn  @click="$router.push('/project')"  v-if="!$vuetify.breakpoint.smAndDown" class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+        <v-btn  @click="$router.push('/project')" v-else small class="light-blue darken-4" rounded outlined 
         style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
       </div>
     </v-container>
@@ -663,7 +663,7 @@
                 <div class="mr-5" @click="scrollTo('#background')">Background</div>
                 <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
                 <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
-                <div class="mr-5" @click="scrollTo('#projects')">Projects</div>
+                <div class="mr-5" @click="$router.push('/project')">Projects</div>
                 <div>
                   <v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn>
                 </div>
@@ -940,6 +940,7 @@ $light-blue-lighten-2:#4FC3F7;
 }
 
 .hoverToLink {
+  cursor:pointer;
   &:hover {
     background-color:$light-blue-lighten-2;
   }
