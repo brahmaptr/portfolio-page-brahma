@@ -625,6 +625,31 @@
 
     </v-card>
   </v-dialog>
+  
+  
+      
+  <v-navigation-drawer
+        v-model="drawer"
+        v-if="drawer"
+        right
+        fixed
+        style="z-index:999"
+      >
+              <div class="navMenusMobile  grey--text text--lighten-1">
+                <div class="mr-5" @click="scrollTo('#')">Home</div>
+                <div class="mr-5" @click="scrollTo('#highlight')">Highlight</div>
+                <div class="mr-5" @click="scrollTo('#background')">Background</div>
+                <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
+                <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
+                <div class="mr-5" @click="scrollTo('#projects')">Projects</div>
+                <div>
+                  <v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn>
+                </div>
+                
+              </div>
+
+      </v-navigation-drawer>
+      
 
 
   <div class="text-center pa-3 pb-10 grey--text">2022. @brahmaptr</div>
@@ -651,7 +676,8 @@ export default {
       previewType:'',
       previewImgDialog:false,
       contactDialog:false,
-      skillsDialog:false
+      skillsDialog:false,
+      drawer:false
     }
   },
   created(){
@@ -911,6 +937,12 @@ $light-blue-lighten-2:#4FC3F7;
   background-size:cover;
   border-radius:20px;
   padding:100px 0 !important;
+}
+
+.navMenusMobile {
+  div {
+    padding:10px;
+  }
 }
 
 @keyframes MoveUpDown {
