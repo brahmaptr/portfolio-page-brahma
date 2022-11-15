@@ -258,15 +258,16 @@
 
 
     <div class="text-center">
-      <iframe class="mr-5 bsGlow"  src="https://ev-routing.netlify.app/" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
-      <iframe  class="bsGlow" src="https://dev.cityplan.id/ev/isochrone" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
+      <iframe class="mr-5 bsGlow"  src="https://ev-routing.netlify.app/ev/current-profile" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
+      <iframe  class="bsGlow" src="https://ev-routing.netlify.app/ev/isochrone" style="width:350px; height:700px;border:0;border-radius:20px;transform:scale(0.8)"></iframe>
     </div>
 
 
     <v-container>
       <div class=" pa-10 d-flex align-center justify-center viewProjectCta mb-10">
         <v-btn v-if="!$vuetify.breakpoint.smAndDown" class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
-        <v-btn v-else small class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+        <v-btn v-else small class="light-blue darken-4" rounded outlined 
+        style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
       </div>
     </v-container>
     
