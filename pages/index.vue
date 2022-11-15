@@ -17,7 +17,7 @@
               <div v-else class="navMenus d-flex align-center grey--text text--lighten-1">
                 <div class="mr-5" href="#section-2">Highlight</div>
                 <div class="mr-5" href="#section-2">Background</div>
-                <div class="mr-5" @click="contact=true">Project</div>
+                <div class="mr-5" @click="contact=true">Projects</div>
                 <div class="mr-5" @click="contact=true">Publication</div>
                 <div class="mr-5" @click="contact=true">Competition</div>
               </div>
@@ -108,7 +108,7 @@
           </div>
 
           <div style="max-width: 800px">
-            <center>A product of Cityplan Indonesia. <b>Dash spatia</b> is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
+            <center>A product of Cityplan Indonesia. <b>Dash spatia</b> is a product that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
           </div>
         </div>
       </v-col>
@@ -135,11 +135,10 @@
               v-slot="{ active }"
             >
               <v-card
-                :color="active ? undefined : 'grey lighten-1'"
                 class="ma-4"
                 width="300"
               >
-              <img :src="'/img/'+n+'.jpg'" width="100%"  @click="previewImg('/img/'+n+'.jpg')"/>
+              <img class="imgSlider" :src="'/img/'+n+'.jpg'" width="100%"  @click="previewImg('/img/'+n+'.jpg','dash')"/>
               </v-card>
             </v-slide-item>
           </v-slide-group>
@@ -168,6 +167,9 @@
 
     </div>
     
+
+
+
     <v-container>
     <div class="blueLine mt-8"></div>
   </v-container>
@@ -180,7 +182,7 @@
       
       <div class="d-flex justify-center">
       <div class="rounded-lg" style="width:fit-content;">
-           <img src="/img/menupad.svg" width="200px">
+           <img class="imgSlider"  src="/img/menupad.svg" width="200px"   >
       </div>
     </div>
 
@@ -219,7 +221,7 @@
                       style="background-color:transparent"
                       
                   >
-                  <img :src="'/img/m'+n+'.png'" width="100%"/>
+                  <img class="imgSlider" :src="'/img/m'+n+'.png'" width="100%" @click="previewImg('/img/m'+n+'.png','menupad')"/>
                   </v-card>
                 </v-slide-item>
               </v-slide-group>
@@ -232,6 +234,110 @@
           </v-row>
         </v-container>
     </div>
+
+    <v-container>
+      <div class=" pa-10 d-flex align-center justify-center viewProjectCta mb-10">
+        <v-btn class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
+      </div>
+    </v-container>
+    
+
+  <v-container>
+    <v-row>
+      <v-col>
+        <div class="text-center mb-5">
+          <h1>
+            Background<span class="ml-3"><v-icon  :style="'color:'+boxShadowColor">mdi-shield-account</v-icon></span>
+          </h1>
+        </div>
+        <div class="text-center">
+          
+          <h3>
+            Work Experience
+          </h3>
+        </div>
+        <div class="d-flex justify-center">
+          
+
+          <v-timeline
+              align-top
+              dense
+            >
+          <v-timeline-item
+              color="pink"
+              small
+            >
+               <div>asdasd</div>
+            </v-timeline-item>
+
+            <v-timeline-item
+              color="teal lighten-3"
+              small
+            > 
+              <v-row class="pt-1">
+                <v-col cols="3">
+                  <strong>3-4pm</strong>
+                </v-col>
+                <v-col>
+                  <strong>Design Stand Up</strong>
+                  <div class="text-caption mb-2">
+                    Hangouts
+                  </div>
+                  <v-avatar>
+                    <v-img
+                      src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairFrida&accessoriesType=Kurt&hairColor=Red&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcitedNatural&mouthType=Disbelief&skinColor=Brown"
+                    ></v-img>
+                  </v-avatar>
+                  <v-avatar>
+                    <v-img
+                      src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&accessoriesType=Prescription02&hairColor=Black&facialHairType=MoustacheMagnum&facialHairColor=BrownDark&clotheType=BlazerSweater&clotheColor=Black&eyeType=Default&eyebrowType=FlatNatural&mouthType=Default&skinColor=Tanned"
+                    ></v-img>
+                  </v-avatar>
+                  <v-avatar>
+                    <v-img
+                      src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairMiaWallace&accessoriesType=Sunglasses&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Surprised&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Pale"
+                    ></v-img>
+                  </v-avatar>
+                </v-col>
+              </v-row>
+            </v-timeline-item>
+
+            <v-timeline-item
+              color="pink"
+              small
+            >
+              <v-row class="pt-1">
+                <v-col cols="3">
+                  <strong>12pm</strong>
+                </v-col>
+                <v-col>
+                  <strong>Lunch break</strong>
+                </v-col>
+              </v-row>
+            </v-timeline-item>
+
+            <v-timeline-item
+              color="teal lighten-3"
+              small
+            >
+              <v-row class="pt-1">
+                <v-col cols="3">
+                  <strong>9-11am</strong>
+                </v-col>
+                <v-col>
+                  <strong>Finish Home Screen</strong>
+                  <div class="text-caption">
+                    Web App
+                  </div>
+                </v-col>
+              </v-row>
+            </v-timeline-item>
+          </v-timeline>
+      </div>
+      </v-col>
+    </v-row>
+  </v-container>
+
 
 
     <v-container>
@@ -251,46 +357,41 @@
         <div class="d-flex justify-center">
           <div style="max-width:600px">
               <div class="mb-5">
-                <b>Data-to-Text for Generating Information of Weather and Air Quality in the R Programming Language
+                  <b class="publicationLink" @click="goToLink('https://jestec.taylors.edu.my/Vol%2014%20issue%201%20February%202019/14_1_34.pdf')">Data-to-Text for Generating Information of Weather and Air Quality in the R Programming Language
                   </b>
                   <div>
                     Journal of Engineering Science and Technology<br/>
                     Vol. 14, No. 1 (2019) 498 - 508<br/>
                     © School of Engineering, Taylor’s University
                   </div>
-                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
+              </div>
+              <div class="mb-5 ">
+                <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/building-map-based-web-application-using-nuxt-and-mapbox-ba758eaa8594?source=user_profile---------3----------------------------')">Building Map-Based Web Application using Nuxt and Mapbox
+                  </b>
+                  <div>
+                    Medium Article
+                  </div>
               </div>
               <div class="mb-5">
-                <b>Building Map-Based Web Application using Nuxt and Mapbox
+                <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/using-autoai-from-ibm-clouds-watson-studio-to-predict-it-professionals-yearly-salary-in-the-295a94c5c27a?source=user_profile---------1----------------------------')">Using IBM’s AutoAI: How I build a salary prediction system
                   </b>
                   <div>
                     Medium Article
                   </div>
-                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
               </div>
-              <div class="mb-5">
-                <b>Using IBM’s AutoAI: How I build a salary prediction system
+              <div  class="mb-5">
+                <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/moving-towards-a-goal-5-reasons-ibm-cloud-developer-certification-can-escalate-your-career-adf1fc3e2987?source=user_profile---------0----------------------------')">Moving Towards a Goal — 5 Reasons IBM Cloud Developer Certification can escalate your career
                   </b>
                   <div>
                     Medium Article
                   </div>
-                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
               </div>
               <div>
-                <b>Moving Towards a Goal — 5 Reasons IBM Cloud Developer Certification can escalate your career
+                <b class="publicationLink" @click="goToLink('https://brahmaputra1996.medium.com/client-side-pdf-generation-if-you-struggled-with-dynamic-content-positioning-in-jspdf-459aef48dc30')">Client-side PDF Generation: If you struggled with dynamic content positioning in jsPdf
                   </b>
                   <div>
                     Medium Article
                   </div>
-                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
-              </div>
-              <div>
-                <b>Client-side PDF Generation: If you struggled with dynamic content positioning in jsPdf
-                  </b>
-                  <div>
-                    Medium Article
-                  </div>
-                  <v-btn small class="mt-2" outlined color="primary">Visit page</v-btn>
               </div>
           </div>
       </div>
@@ -298,10 +399,61 @@
     </v-row>
   </v-container>
 
-  <v-dialog v-model="previewImgDialog" max-width="1000px">
-    <v-card>
-      <div style="max-width:1000px;">
-        <img :src="currentImg" width="100%"/>
+  
+
+  <v-container>
+    <div>
+      <div class="blueLine"></div>
+    </div>
+  </v-container>
+
+
+  <v-container>
+    <v-row>
+      <v-col>
+        <div class="text-center mb-5">
+          <h1 class="mb-3">
+            Competition<span class="ml-3"><v-icon  :style="'color:'+boxShadowColor">mdi-trophy</v-icon></span>
+          </h1>
+          <img src="/img/award.png" width="100%" style="max-width:600px"/>
+        </div>
+        <div class="d-flex justify-center">
+          <div style="max-width:600px">
+              <div class="mb-5">
+                  <div class="d-flex align-center"> 
+                    <v-chip x-small class="orange darken-3 mr-2 d-flex justify-center">3rd Place Winner</v-chip> <b>IBM Cloud Data Challenge – Outcome Prediction using AutoAI</b>
+                  </div>
+                  <div>Building Techpath: a salary prediction app using IT Salary Survey for EU region dataset with CRISP-DM Methodology, Utilizing AutoAI from IBM Watson Studio.</div>
+              </div>
+              <div class="mb-5" >
+                <div class="d-flex align-center">
+                  <v-chip x-small class="orange darken-3 mr-2 d-flex justify-center"  style="width:100px">Top 30</v-chip> <b>Republic of IOT (RIOT) Product Innovation 2017</b>
+                </div>
+                  <div>
+                    Creating E-Breeding:  a tool for detecting the time of estrus in cattle to optimize animal husbandry based on physical signal analysis. 
+                  </div>
+              </div>
+              <div class="mb-5" >
+                <div class="d-flex align-center">
+                  <v-chip x-small class="orange darken-3 mr-2 d-flex justify-center"  style="width:100px">Participant</v-chip> <b>Microsoft Imagine Cup - Innovative Category Compoetition</b>
+                </div>
+                  <div>
+                    Creating AMERA Parental Control prototype: A monitoring web/mobile app that integrates with school system to montior student behaviour and development.
+                  </div>
+              </div>
+          </div>
+      </div>
+      </v-col>
+    </v-row>
+  </v-container>
+
+  <v-dialog v-model="previewImgDialog" width="fit-content">
+    <v-card class="d-flex justify-center">
+      <div style="max-width:1000px;" v-if="previewType=='dash'">
+        <img :src="currentImg" width="100%" style="border-radius:20px"/>
+      </div>
+      <div style="max-width:300px;" v-if="previewType=='menupad'">
+        <img :src="currentImg" width="100%" style="border-radius:20px"/>
       </div>
     </v-card>
   </v-dialog>
@@ -466,6 +618,14 @@ $light-blue-lighten-2:#4FC3F7;
   }
 }
 
+.publicationLink {
+  transition:0.3s;
+  &:hover {
+    color:$light-blue-lighten-2;
+    cursor:pointer;
+  }
+}
+
 .mainLottieScale {
   transform:scale(1.25);
 }
@@ -506,6 +666,22 @@ $light-blue-lighten-2:#4FC3F7;
   &:hover {
     background-color:$light-blue-lighten-2;
   }
+}
+
+.imgSlider {
+    opacity:1;
+    transition:0.2s;
+  &:hover {
+    transform:scale(1.05);
+    cursor:pointer;
+  }
+}
+
+.viewProjectCta {
+  background:url('/img/tes.png');
+  background-size:cover;
+  border-radius:20px;
+  padding:100px 0 !important;
 }
 
 @keyframes MoveUpDown {
@@ -552,6 +728,7 @@ export default {
       boxShadowColor: '#00E2FFFF',
       model:0,
       currentImg:'',
+      previewType:'',
       previewImgDialog:false
     }
   },
@@ -563,10 +740,14 @@ export default {
     updateScroll() {
        this.scrollPosition = window.scrollY
     },
-    previewImg(val){
+    previewImg(val,type){
+      this.previewType = type
       this.previewImgDialog = true
       console.log(this.previewImgDialog)
       this.currentImg = val
+    },
+    goToLink(val){
+      window.open(val, '_blank');
     }
   }
 }
