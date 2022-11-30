@@ -155,6 +155,7 @@
           <div><img class="mr-5" src="/img/astro.png" width="120px"></div>
           <div><img class="mr-5" src="/img/btn.png" width="120px"></div>
           <div><img class="mr-5" src="/img/flash.png" width="120px"></div>
+          <div><img class="mr-5" src="/img/erajaya.png" width="100px"></div>
         </div>
 
         <div class="d-flex justify-center mt-5">
@@ -402,6 +403,33 @@
                         </div>
                       </div>
                   </v-timeline-item>
+
+
+                  
+            <v-timeline-item
+                color="purple"
+              class="mt-3">
+              <h3>
+                Certification
+              </h3>
+            </v-timeline-item>
+
+            <v-timeline-item
+                color="pink"
+                center
+                small
+                hide-dot
+              >
+                <div class="d-flex" style="flex-flow:row wrap">
+                  <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/ef.png" style="border-radius:20px"/></div>
+                    <div  style="flex-flow:row wrap">
+                    <div style="font-size:1.3em" class="mb-2"><b>C1 Advanced English</b></div>
+                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>Nov 2022</v-chip> <v-btn href="/pdf/c1-advanced-certificate-brahma.pdf" download x-small>View Certificate</v-btn> </div>
+                    </div>
+                  </div>
+              </v-timeline-item>
+
+
             
           </v-timeline>
       </div>
