@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div class="navbarPersonal" :style="'box-shadow: 0 0 200px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 50}">
+    <div class="navbarPersonal" data-aos="fade-down" :style="'box-shadow: 0 0 200px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 50}">
       <v-container>
       <div class="d-flex justify-space-between align-center" >
-              <div class="logo" @click="scrollTo('#')"> </div>
+              <div @click="scrollTo('#')" style="font-size:26px; font-weight: bold;">
+                Brahma<span :style="'color:'+boxShadowColor+';font-size:36px;line-height:1'">.</span>
+              </div>  
               <div v-if="$vuetify.breakpoint.smAndDown">
                 <v-btn
                   color="cyan"
@@ -19,7 +21,7 @@
                 <div class="mr-5" @click="scrollTo('#background')">Background</div>
                 <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
                 <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
-                <div class="mr-5" @click="$router.push('/project')">Projects</div>
+                <!-- <div class="mr-5" @click="$router.push('/project')">Projects</div> -->
               </div>
               <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
           </div>
@@ -32,7 +34,7 @@
           <v-col class="d-flex align-center justify-center" cols="12">
             <div class="d-flex"  style="flex-flow:row;" :class="{'flexWrap':$vuetify.breakpoint.smAndDown}">
               <div class="d-flex align-center px-10" style="flex-flow:column wrap" :class="{'full-width':$vuetify.breakpoint.smAndDown}">
-                <div class="effectContainer" :class="{'flexGrow':$vuetify.breakpoint.smAndDown}">
+                <div data-aos="zoom-in-up" class="effectContainer" :class="{'flexGrow':$vuetify.breakpoint.smAndDown}">
                   <div class="imgContainer">
                     <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gqhy4rmx.json" class="mainLottieScale" background="transparent" speed="0.3" loop autoplay></lottie-player> -->
                     <lottie-player src="/img/reactor2.json" class="mainLottieScale" background="transparent" speed="0.5" loop autoplay></lottie-player>
@@ -57,12 +59,12 @@
               <div style="max-width:500px;z-index:10" class="mt-5 ml-10" :class="{'full-width zeroLeft':$vuetify.breakpoint.smAndDown}">
                 <div class="pa-4">
                     <div class="d-flex align-start" style="position:relative">
-                      <div class="nameText mr-2">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
+                      <div class="nameText mr-2" data-aos="fade-up">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
-                    <div class="mb-2">Hi! I'm Senior Front-End Developer of <span class="hoverToLink" @click="scrollTo('https://cityplan.id','blank')">Cityplan Indonesia</span>.</div>
-                    <div>I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
-                    <div class="d-flex align-center mt-5">
-                      <div class="mr-4"><v-btn outlined small @click="contactDialog=true"><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
+                    <div class="mb-2" data-aos="fade-left">Hi! I'm Senior Front-End Developer of <span class="hoverToLink" @click="scrollTo('https://cityplan.id','blank')">Cityplan Indonesia</span>.</div>
+                    <div data-aos="fade-right">I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
+                    <div class="d-flex align-center mt-5" data-aos="zoom-in-up">
+                      <div class="mr-4" ><v-btn outlined small @click="contactDialog=true"><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
                       <div class="iconButton" @click="scrollTo('https://github.com/brahmaputra7','blank')"><v-icon>mdi-github</v-icon></div>
                       <div class="iconButton d-flex align-center justify-center" @click="scrollTo('https://brahmaputra1996.medium.com/','blank')"><img src="/img/medium.png" width="25px"></div>
                       <div class="iconButton" @click="scrollTo('https://www.linkedin.com/in/brahmaputra7/','blank')"><v-icon>mdi-linkedin</v-icon></div>
@@ -76,7 +78,6 @@
     </div>
 
     <div class="text-center">
-      
       Skill tags:
     </div>
     <div class="d-flex justify-center">
@@ -158,9 +159,6 @@
           <div><img class="mr-5" src="/img/erajaya.png" width="100px"></div>
         </div>
 
-        <div class="d-flex justify-center mt-5">
-          <v-btn class="purple--text mt-3 text--lighten-2" rounded style="width:250px" href="https://spatia.id" target="_blank">DISCOVER DASH SPATIA <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
-        </div>
         </v-col>
       </v-row>
       </v-container>
@@ -228,9 +226,6 @@
               </v-slide-group>
             </v-sheet>
             
-        <div class="d-flex justify-center my-5">
-          <v-btn class="red--text mt-3" rounded href="https://menupad.link" target="_blank">DISCOVER MENUPAD (DEPRECATED)<v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
-        </div>
           </v-col>
           </v-row>
         </v-container>
@@ -258,14 +253,14 @@
       </v-col>
       </v-row>
       </v-container>
-
+<!-- 
     <v-container>
       <div class=" pa-10 d-flex align-center justify-center viewProjectCta mb-10">
         <v-btn  @click="$router.push('/project')"  v-if="!$vuetify.breakpoint.smAndDown" class="light-blue darken-4" rounded outlined style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
         <v-btn  @click="$router.push('/project')" v-else small class="light-blue darken-4" rounded outlined 
         style="background:transparent !important;border:2px solid #ffffff !important">View All Experience in Projects  <v-icon class="ml-3">mdi-arrow-right</v-icon></v-btn>
       </div>
-    </v-container>
+    </v-container> -->
     
 
   <v-container id="background">
@@ -711,6 +706,8 @@
 import "@lottiefiles/lottie-player";
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
 
 export default {
   components: {
@@ -734,6 +731,12 @@ export default {
     this.scrollTo('#','')
   },  
   mounted() {
+    
+      // Initialize AOS after the component is mounted
+      AOS.init({
+        duration: 1500,
+        once: true,
+      });
     window.addEventListener('scroll', this.updateScroll);
   },
   methods:{
@@ -766,6 +769,7 @@ export default {
 
 
 <style scoped lang="scss">
+
 $cyan:#00BCD4;
 $light-blue-lighten-2:#4FC3F7;
 
@@ -781,22 +785,23 @@ $light-blue-lighten-2:#4FC3F7;
 }
 
 .navbarPersonal {
-  background-color:rgba(0,0,0,0.8);
+  background-color:rgba(0,0,0,0.5 );
   position:fixed;
   display:flex;
   align-items: center;
   top:0;
   width:100%;
-  height:60px;
+  height:80px;
   z-index:50 !important;    
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  transition: 0.2s ease-in-out;
+  transition: 0.5s ease-in-out;
   border-bottom:2px solid #000000;
 }
 
 
 .navbarScroll{
+  height: 50px;
   box-shadow: none !important;
   border-bottom:2px solid rgba(79,195,247,0.3);
 }
@@ -836,25 +841,7 @@ $light-blue-lighten-2:#4FC3F7;
 .buttonScaled {
   &:hover {
     transition: all ease-in-out 0.5s;
-    padding-top:20px;
-    padding-bottom:20px;
-  }
-}
-
-
-.logo {
-  background:url('/img/logo-long.png') no-repeat;
-  background-size: contain;
-  width:140px;
-  height:30px;
-  transition:0.2s;
-  cursor:pointer;
-  &:hover {
-  transition:0.2s;
-    background:url('/img/logo-light.png') no-repeat;
-    background-size: contain;
-    width:140px;
-    height:30px;
+    transform: scale(1.05);
   }
 }
 
@@ -941,7 +928,7 @@ $light-blue-lighten-2:#4FC3F7;
 }
 
 .marginTopMobile {
-  margin-top:70px;
+  margin-top:60px;
 }
 
 .updownAnimated 
