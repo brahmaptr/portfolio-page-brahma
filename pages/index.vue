@@ -17,19 +17,20 @@
                 </v-btn>
               </div>
               <div v-else class="navMenus d-flex align-center grey--text text--lighten-1">
+                <div class="mr-5" @click="scrollTo('#profile')">Profile</div>
                 <div class="mr-5" @click="scrollTo('#highlight')">Highlight</div>
                 <div class="mr-5" @click="scrollTo('#background')">Background</div>
                 <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
                 <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
                 <!-- <div class="mr-5" @click="$router.push('/project')">Projects</div> -->
               </div>
-              <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
+              <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined :color="boxShadowColor"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
           </div>
         </v-container>
     </div>
 
-    <div class="mainSection" :class="{'marginTopMobile':$vuetify.breakpoint.smAndDown}">
-      <v-container>
+    <div class="mainSection"  :class="{'marginTopMobile':$vuetify.breakpoint.smAndDown}">
+      <v-container >
         <v-row>
           <v-col class="d-flex align-center justify-center" cols="12">
             <div class="d-flex"  style="flex-flow:row;" :class="{'flexWrap':$vuetify.breakpoint.smAndDown}">
@@ -43,7 +44,7 @@
                     <img src="/img/photo.png" :style="'box-shadow: 0 0 60px 10px'+ boxShadowColor">
                   </div>
                   
-                  <div class="d-flex justify-center" style="width:100%;bottom:-30px;position:absolute;z-index:20">
+                  <div data-aos="zoom-in-up" class="d-flex justify-center" style="width:100%;bottom:-30px;position:absolute;z-index:20">
                     <v-color-picker
                       v-model="boxShadowColor"
                       :style="'width:200px'"
@@ -59,7 +60,7 @@
               <div style="max-width:500px;z-index:10" class="mt-5 ml-10" :class="{'full-width zeroLeft':$vuetify.breakpoint.smAndDown}">
                 <div class="pa-4">
                     <div class="d-flex align-start" style="position:relative">
-                      <div class="nameText mr-2" data-aos="fade-up">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
+                      <div class="nameText mr-2" data-aos="fade-up">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" data-aos-delay="500" data-aos="zoom-in-right" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
                     <div class="mb-2" data-aos="fade-left">Hi! I'm Senior Front-End Developer of <span class="hoverToLink" @click="scrollTo('https://cityplan.id','blank')">Cityplan Indonesia</span>.</div>
                     <div data-aos="fade-right">I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
@@ -754,10 +755,16 @@ export default {
       window.open(val, '_blank');
     },
     scrollTo(val,target){
+      console.log(val)
       if(target=='blank'){
         window.open(val, '_blank');
       }else{
-        window.location.href=val
+        if(val === '#profile'){
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          history.pushState(null, '', '/#profile'); 
+        }else{
+          window.location.href = val
+        }
       }
     },
     mailTo(){
@@ -811,10 +818,11 @@ $light-blue-lighten-2:#4FC3F7;
     transition:0.2s;
     padding-bottom:2px;
     padding-left:5px;
-    border-radius:0 0 0 5px;
     padding-right:5px;
+    border-bottom:3px solid transparent;
     &:hover {
       
+      border-bottom:3px solid #fff;
       transition:0.2s linear;
       a {
         transition:0.2s;
