@@ -77,42 +77,47 @@
             </div>
           </v-col>
         </v-row>
+        <v-row :class="$vuetify.breakpoint.smAndDown ? 'mt-1' : 'mt-10'">
+          <v-col cols="12">
+            <div class="text-center" data-aos="fade-up">
+              Skill tags:
+            </div>
+            <div data-aos="fade-up" class="d-flex justify-center">
+              <div style="max-width:600px;text-align: center;">
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Front-end Development</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Vue JS</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Nuxt JS</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">GIS</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Arcgis Javascript</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Mapbox</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">User Experience (UX)</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Figma</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" @click="skillsDialog=true" class="mr-b mt-2 light-blue">View
+                  More</v-chip>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
       </v-container>
     </div>
 
-    <div class="text-center" data-aos="fade-up">
-      Skill tags:
-    </div>
-    <div data-aos="fade-up" class="d-flex justify-center">
-      <div style="max-width:600px;text-align: center;">
-        <v-chip class="mr-b mt-2">Front-end Development</v-chip>
-        <v-chip class="mr-b mt-2">Vue JS</v-chip>
-        <v-chip class="mr-b mt-2">Nuxt JS</v-chip>
-        <v-chip class="mr-b mt-2">GIS</v-chip>
-        <v-chip class="mr-b mt-2">Arcgis Javascript</v-chip>
-        <v-chip class="mr-b mt-2">Mapbox</v-chip>
-        <v-chip class="mr-b mt-2">User Experience (UX)</v-chip>
-        <v-chip class="mr-b mt-2">Figma</v-chip>
-        <v-chip @click="skillsDialog=true" class="mr-b mt-2 light-blue">View More</v-chip>
-      </div>
-    </div>
     <div id="highlight" class="section-2" >
-      <div data-aos="fade-in" class="text-center pa-5"
-       :style="'font-size:12px;letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';margin-top:120px;background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
+      <div data-aos="fade-in" class="text-center pa-5" :class="$vuetify.breakpoint.smAndDown ? 'mt-10':'mt-15'"
+       :style="'font-size:12px;letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
         <span  :style="'color:'+boxShadowColor+';'">--</span>LATEST DEVELOPMENT<span :style="'color:'+boxShadowColor+';'">--</span>
       </div>
       <v-container fluid  style="background-color: #2b2b2b;width:100%" :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
         <v-row>
-          <v-col cols="12" md="7" :style="'width:100%;max-width: 900px;' ">
+          <v-col cols="12" md="7" class="mb-0 pb-0" :style="'width:100%;max-width: 900px;' ">
             <img data-aos="zoom-in-right" src="/polyurba.png" width="100%" />
           </v-col>
           <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
             <div data-aos="zoom-in-left">
-              <h1 class="py-5 d-flex align-center">
+              <h1 class="d-flex align-center">
                 <div class="d-flex align-center"><img class="rounded-lg mr-3" src="/pw.png" width="40px"/> PolyurbanWaters</div>
                 <v-divider class="ml-3" :style="'border:1px solid '+ boxShadowColor"></v-divider>
               </h1>
-              <div class="pa-3 rounded-lg mb-3" style="background-color: #004875;">
+              <div class="pa-3 mt-3 rounded-lg mb-3" :style="$vuetify.breakpoint.smAndDown ? 'font-size:12px':''" style="background-color: #004875;">
                 <b>The PolyUrbanWaters</b> app is an interactive platform designed to support water-sensitive urban planning in Southeast Asia.
                 It integrates dynamic data visualizations, allowing users to explore water management models and strategic planning
                 tools for urban development.
@@ -122,7 +127,7 @@
                 various devices. It efficiently handles complex datasets and delivers real-time data insights through seamless
                 integration with back-end services.
               </p>
-              <v-btn href="https://kotaramahair.id" target="_blank" outlined :color="boxShadowColor" class="mt-5" style="border-radius: 100px;">DISCOVER APP <v-icon class="ml-5">mdi-arrow-right</v-icon></v-btn>
+              <v-btn href="https://kotaramahair.id" target="_blank" outlined :color="boxShadowColor" class="mb-5" style="border-radius: 100px;">DISCOVER APP <v-icon class="ml-5">mdi-arrow-right</v-icon></v-btn>
             </div>
           </v-col>
         </v-row>
@@ -943,9 +948,7 @@ $light-blue-lighten-2:#4FC3F7;
 .mainSection {
   width:100%;
   margin-top:120px;
-  overflow:hidden;
   padding-top:50px;
-  padding-bottom:50px;
 }
 
 .nameText{
