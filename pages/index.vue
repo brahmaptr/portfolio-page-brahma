@@ -113,8 +113,8 @@
           </v-col>
           <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
             <div>
-              <h1 class="d-flex align-center">
-                <div class="d-flex align-center"><img class="rounded-lg mr-3" src="/pw.png" width="40px"/> PolyurbanWaters</div>
+              <h1 class="d-flex align-center" :class="{'justify-center' : $vuetify.breakpoint.smAndDown}"> 
+                <div class="d-flex align-center" style="font-size:20px"><img class="rounded-lg mr-3" src="/pw.png" width="40px"/> Polyurban Waters</div>
                 <v-divider v-if="!$vuetify.breakpoint.smAndDown" class="ml-3" :style="'border:1px solid '+ boxShadowColor"></v-divider>
               </h1>
               <div class="pa-3 mt-3 rounded-lg mb-3" :style="$vuetify.breakpoint.smAndDown ? 'font-size:12px':''" style="background-color: #004875;">
@@ -152,7 +152,7 @@
            <img src="/img/spatia.png" width="150px">
           </div>
 
-          <div style="max-width: 800px">
+          <div :class="{'f12':$vuetify.breakpoint.smAndDown}" style="max-width: 800px">
             <div class="text-center"><b>Dash spatia</b> is a product of <i>cityplan</i> that helps user analyzing spatial data with multiple tools. <div class="my-2" v-if="$vuetify.breakpoint.smAndDown"></div> Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</div>
           </div>
         </div>
@@ -164,15 +164,9 @@
       
         <v-row>
           <v-col>
-      <v-sheet
-          class="mx-auto"
-          style="border-radius:20px"
-          elevation="8"
-        >
           <v-slide-group
             v-model="model"
-            class="pa-4"
-            show-arrows
+            mobile-breakpoint=""
             active-class="success"
           >
             <v-slide-item
@@ -188,7 +182,6 @@
               </v-card>
             </v-slide-item>
           </v-slide-group>
-        </v-sheet>
 
         <div class="d-flex justify-center mt-5">
           As used by<br/>
@@ -218,7 +211,7 @@
     <div class="blueLine mt-8"></div>
   </v-container>
 
-    <div class="menupadSection  pt-10 pb-10">
+    <div :class="{'f12':$vuetify.breakpoint.smAndDown}"  class="menupadSection  pt-10 pb-10">
       
       <div class="d-flex justify-center">
       <v-chip small outlined class="orange orange--text mb-3">PRODUCT HIGHLIGHT</v-chip>
@@ -234,9 +227,7 @@
           <v-container>
             <div class="d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
               <div style="max-width: 800px"  data-aos="fade-up">
-                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. <div class="my-2" v-if="$vuetify.breakpoint.smAndDown"></div>  Direct your customers to digital menus specially designed for smartphone screens.  <div class="my-2" v-if="$vuetify.breakpoint.smAndDown"></div>
-
-                This menu can be accessed via a QR code, or via a link on your social media profile.</center>
+                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. <div class="my-2" v-if="$vuetify.breakpoint.smAndDown"></div>  Direct your customers to digital menus specially designed for smartphone screens. This menu can be accessed via a QR code, or via a link on your social media profile.</center>
               </diV>
             </div>
           </v-container>
@@ -253,7 +244,6 @@
             >
               <v-slide-group
                 v-model="model"
-                show-arrows
               >
                 <v-slide-item
                   v-for="n in 8"
@@ -1010,7 +1000,9 @@ $light-blue-lighten-2:#4FC3F7;
   position: absolute;
   z-index:0;
 }
-
+.f12 {
+  font-size: 12px;
+}
 .asUsedBy {
   div {
     flex-shrink:0 !important; 
