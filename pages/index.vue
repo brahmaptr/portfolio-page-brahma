@@ -112,7 +112,7 @@
             <img data-aos="zoom-in-right" src="/polyurba.png" width="100%" />
           </v-col>
           <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
-            <div data-aos="zoom-in-left">
+            <div>
               <h1 class="d-flex align-center">
                 <div class="d-flex align-center"><img class="rounded-lg mr-3" src="/pw.png" width="40px"/> PolyurbanWaters</div>
                 <v-divider class="ml-3" :style="'border:1px solid '+ boxShadowColor"></v-divider>
