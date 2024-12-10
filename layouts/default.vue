@@ -19,6 +19,12 @@
 html {
   
   scroll-behavior: smooth;
+  background-color: #000;
+}
+
+.v-application--wrap {
+  width:100%;
+  overflow-x: hidden;
 }
 
 .v-color-picker__dot {

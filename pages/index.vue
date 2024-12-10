@@ -35,7 +35,7 @@
           <v-col class="d-flex align-center justify-center" cols="12">
             <div class="d-flex"  style="flex-flow:row;" :class="{'flexWrap':$vuetify.breakpoint.smAndDown}">
               <div class="d-flex align-center px-10" style="flex-flow:column wrap" :class="{'full-width':$vuetify.breakpoint.smAndDown}">
-                <div data-aos="zoom-in-up" class="effectContainer" :class="{'flexGrow':$vuetify.breakpoint.smAndDown}">
+                <div class="effectContainer" :class="{'flexGrow':$vuetify.breakpoint.smAndDown}">
                   <div class="imgContainer" id="#profile">
                     <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gqhy4rmx.json" class="mainLottieScale" background="transparent" speed="0.3" loop autoplay></lottie-player> -->
                     <lottie-player src="/img/reactor2.json" class="mainLottieScale" background="transparent" speed="0.5" loop autoplay></lottie-player>
@@ -44,7 +44,9 @@
                     <img src="/img/photo.png" :style="'box-shadow: 0 0 60px 10px'+ boxShadowColor">
                   </div>
                   
-                  <div data-aos="zoom-in-up" class="d-flex justify-center align-center" style="width:100%;bottom:-30px;position:absolute;z-index:20">
+                  <div data-aos="zoom-in-up" class="d-flex justify-center align-center" style="width:100%;bottom:-30px;position:absolute;z-index:99">
+                    <v-btn outlined @click="$store.commit('changeFont')" class="py-5 px-0 ma-0 grey darken-4"><v-icon
+                        :color="boxShadowColor">mdi-alphabet-greek</v-icon></v-btn>
                     <v-color-picker
                       v-model="boxShadowColor"
                       :style="'width:200px'"
@@ -53,7 +55,6 @@
                       hide-inputs
                       mode="rgba"
                     ></v-color-picker>
-                    <v-btn outlined @click="$store.commit('changeFont')" class="py-5 grey darken-4"><v-icon  :color="boxShadowColor">mdi-alphabet-greek</v-icon></v-btn>
                   </div>
 
                 </div>
@@ -97,7 +98,7 @@
     </div>
     <div id="highlight" class="section-2" >
       <div data-aos="fade-in" class="text-center pa-5"
-       :style="'letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';margin-top:120px;background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
+       :style="'font-size:12px;letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';margin-top:120px;background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
         <span  :style="'color:'+boxShadowColor+';'">--</span>LATEST DEVELOPMENT<span :style="'color:'+boxShadowColor+';'">--</span>
       </div>
       <v-container fluid  style="background-color: #2b2b2b;width:100%" :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
@@ -108,10 +109,10 @@
           <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
             <div data-aos="zoom-in-left">
               <h1 class="py-5 d-flex align-center">
-                <div>PolyurbanWaters</div>
+                <div class="d-flex align-center"><img class="rounded-lg mr-3" src="/pw.png" width="40px"/> PolyurbanWaters</div>
                 <v-divider class="ml-3" :style="'border:1px solid '+ boxShadowColor"></v-divider>
               </h1>
-              <div class="pa-3 rounded-lg mb-3" style="text-align: justify; background-color: #004875;">
+              <div class="pa-3 rounded-lg mb-3" style="background-color: #004875;">
                 <b>The PolyUrbanWaters</b> app is an interactive platform designed to support water-sensitive urban planning in Southeast Asia.
                 It integrates dynamic data visualizations, allowing users to explore water management models and strategic planning
                 tools for urban development.
@@ -719,8 +720,8 @@
         fixed
         style="z-index:999"
       >
-              <div class="navMenusMobile  grey--text text--lighten-1">
-                <div class="mr-5" @click="scrollTo('#')" >Home</div>
+              <div class="navMenusMobile pa-5  grey--text text--lighten-1">
+                <div class="mr-5" @click="scrollTo('#profile')" >Profile</div>
                 <div class="mr-5" @click="scrollTo('#highlight')" >Highlight</div>
                 <div class="mr-5" @click="scrollTo('#background')">Background</div>
                 <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
