@@ -109,13 +109,13 @@
       <v-container fluid  style="background-color: #2b2b2b;width:100%" :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
         <v-row>
           <v-col cols="12" md="7" class="mb-0 pb-0" :style="'width:100%;max-width: 900px;' ">
-            <img data-aos="zoom-in-right" src="/polyurba.png" width="100%" />
+            <img src="/polyurba.png" width="100%" />
           </v-col>
           <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
             <div>
               <h1 class="d-flex align-center">
                 <div class="d-flex align-center"><img class="rounded-lg mr-3" src="/pw.png" width="40px"/> PolyurbanWaters</div>
-                <v-divider class="ml-3" :style="'border:1px solid '+ boxShadowColor"></v-divider>
+                <v-divider v-if="!$vuetify.breakpoint.smAndDown" class="ml-3" :style="'border:1px solid '+ boxShadowColor"></v-divider>
               </h1>
               <div class="pa-3 mt-3 rounded-lg mb-3" :style="$vuetify.breakpoint.smAndDown ? 'font-size:12px':''" style="background-color: #004875;">
                 <b>The PolyUrbanWaters</b> app is an interactive platform designed to support water-sensitive urban planning in Southeast Asia.
