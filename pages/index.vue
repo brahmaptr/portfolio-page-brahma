@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbarPersonal" data-aos="fade-down" :style="'box-shadow: 0 0 200px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 50}">
+    <div class="navbarPersonal" data-aos="fade-down" :style="scrollPosition > 50 ? 'border-bottom:1px solid ' +boxShadowColor : 'box-shadow: 0 0 200px 0px'+ boxShadowColor" :class="{'navbarScroll': scrollPosition > 50}">
       <v-container>
       <div class="d-flex justify-space-between align-center" >
               <div @click="scrollTo('#')" style="font-size:26px; font-weight: bold;">
@@ -8,7 +8,7 @@
               </div>  
               <div v-if="$vuetify.breakpoint.smAndDown">
                 <v-btn
-                  color="cyan"
+                  :color="boxShadowColor"
                   outlined
                   dark
                   @click.stop="drawer = !drawer"
@@ -17,11 +17,11 @@
                 </v-btn>
               </div>
               <div v-else class="navMenus d-flex align-center grey--text text--lighten-1">
-                <div class="mr-5" @click="scrollTo('#profile')">Profile</div>
-                <div class="mr-5" @click="scrollTo('#highlight')">Highlight</div>
-                <div class="mr-5" @click="scrollTo('#background')">Background</div>
-                <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
-                <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
+                <div class="mr-5" @click="scrollTo('#profile')" :style="currentSection === '#profile' ? 'font-weight:bold;transform:scale(1.05);border-bottom:2px solid '+ boxShadowColor +';color:'+boxShadowColor:''">Profile</div>
+                <div class="mr-5" @click="scrollTo('#highlight')" :style="currentSection === '#highlight' ?  'font-weight:bold;;transform:scale(1.05);border-bottom:2px solid '+ boxShadowColor +';color:'+boxShadowColor:''">Highlight</div>
+                <div class="mr-5" @click="scrollTo('#background')" :style="currentSection === '#background' ?  'font-weight:bold;;transform:scale(1.05);border-bottom:2px solid '+ boxShadowColor +';color:'+boxShadowColor:''">Background</div>
+                <div class="mr-5" @click="scrollTo('#publication')"  :style="currentSection === '#publication' ?  'font-weight:bold;;transform:scale(1.05);border-bottom:2px solid '+ boxShadowColor +';color:'+boxShadowColor:''">Publication</div>
+                <div class="mr-5" @click="scrollTo('#competition')"  :style="currentSection === '#competition' ?  'font-weight:bold;;transform:scale(1.05);border-bottom:2px solid '+ boxShadowColor +';color:'+boxShadowColor:''">Competition</div>
                 <!-- <div class="mr-5" @click="$router.push('/project')">Projects</div> -->
               </div>
               <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined :color="boxShadowColor"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
@@ -30,13 +30,13 @@
     </div>
 
     <div class="mainSection"  :class="{'marginTopMobile':$vuetify.breakpoint.smAndDown}">
-      <v-container >
+      <v-container 
         <v-row>
           <v-col class="d-flex align-center justify-center" cols="12">
             <div class="d-flex"  style="flex-flow:row;" :class="{'flexWrap':$vuetify.breakpoint.smAndDown}">
               <div class="d-flex align-center px-10" style="flex-flow:column wrap" :class="{'full-width':$vuetify.breakpoint.smAndDown}">
                 <div data-aos="zoom-in-up" class="effectContainer" :class="{'flexGrow':$vuetify.breakpoint.smAndDown}">
-                  <div class="imgContainer">
+                  <div class="imgContainer" id="#profile">
                     <!-- <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gqhy4rmx.json" class="mainLottieScale" background="transparent" speed="0.3" loop autoplay></lottie-player> -->
                     <lottie-player src="/img/reactor2.json" class="mainLottieScale" background="transparent" speed="0.5" loop autoplay></lottie-player>
                   </div>
@@ -44,7 +44,7 @@
                     <img src="/img/photo.png" :style="'box-shadow: 0 0 60px 10px'+ boxShadowColor">
                   </div>
                   
-                  <div data-aos="zoom-in-up" class="d-flex justify-center" style="width:100%;bottom:-30px;position:absolute;z-index:20">
+                  <div data-aos="zoom-in-up" class="d-flex justify-center align-center" style="width:100%;bottom:-30px;position:absolute;z-index:20">
                     <v-color-picker
                       v-model="boxShadowColor"
                       :style="'width:200px'"
@@ -53,6 +53,7 @@
                       hide-inputs
                       mode="rgba"
                     ></v-color-picker>
+                    <v-btn outlined @click="$store.commit('changeFont')" class="py-5 grey darken-4"><v-icon  :color="boxShadowColor">mdi-alphabet-greek</v-icon></v-btn>
                   </div>
 
                 </div>
@@ -78,10 +79,10 @@
       </v-container>
     </div>
 
-    <div class="text-center">
+    <div class="text-center" data-aos="fade-up">
       Skill tags:
     </div>
-    <div class="d-flex justify-center">
+    <div data-aos="fade-up" class="d-flex justify-center">
       <div style="max-width:600px;text-align: center;">
         <v-chip class="mr-b mt-2">Front-end Development</v-chip>
         <v-chip class="mr-b mt-2">Vue JS</v-chip>
@@ -95,13 +96,50 @@
       </div>
     </div>
     <div id="highlight" class="section-2" >
-
+      <div data-aos="fade-in" class="text-center pa-5"
+       :style="'letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';margin-top:120px;background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
+        <span  :style="'color:'+boxShadowColor+';'">--</span>LATEST DEVELOPMENT<span :style="'color:'+boxShadowColor+';'">--</span>
+      </div>
+      <v-container fluid  style="background-color: #2b2b2b;width:100%" :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
+        <v-row>
+          <v-col cols="12" md="7" :style="'width:100%;max-width: 900px;' ">
+            <img data-aos="zoom-in-right" src="/polyurba.png" width="100%" />
+          </v-col>
+          <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
+            <div data-aos="zoom-in-left">
+              <h1 class="py-5 d-flex align-center">
+                <div>PolyurbanWaters</div>
+                <v-divider class="ml-3" :style="'border:1px solid '+ boxShadowColor"></v-divider>
+              </h1>
+              <div class="pa-3 rounded-lg mb-3" style="text-align: justify; background-color: #004875;">
+                <b>The PolyUrbanWaters</b> app is an interactive platform designed to support water-sensitive urban planning in Southeast Asia.
+                It integrates dynamic data visualizations, allowing users to explore water management models and strategic planning
+                tools for urban development.
+              </div>
+              <p style="text-align: justify;font-size:12px">
+                The app is developed using Vue.js, Nuxt.js, and MapLibre, providing a smooth and responsive user experience across
+                various devices. It efficiently handles complex datasets and delivers real-time data insights through seamless
+                integration with back-end services.
+              </p>
+              <v-btn href="https://kotaramahair.id" target="_blank" outlined :color="boxShadowColor" class="mt-5" style="border-radius: 100px;">DISCOVER APP <v-icon class="ml-5">mdi-arrow-right</v-icon></v-btn>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+      <!-- <div class="d-flex" style="background-color: #2b2b2b;width:100%" :style="'flex-flow:row wrap;border-bottom:0.5px solid '+boxShadowColor">
+        <div class="pa-15" :style="'flex-basis:100%;border-right:0.5px solid '+boxShadowColor+';width:100%;max-width: 900px; mibackground-opacity:0.5;background: radial-gradient(circle , #5e5d5d ,#000)' " >
+          <img src="/polyurba.png" width="100%"/>
+        </div>
+        <div class="pa-5" style="flex-grow:1;background-color: #fff;">
+          <h1>
+            PolyurbanWaters
+          </h1>
+        </div>
+      </div> -->
       <v-container>
         <v-row>
           <v-col>
         <div class="d-flex align-center justify-center mt-10" style="flex-flow:column" data-aos="fade-up">
-          <div class="blueLine mb-9"></div>
-
           <v-chip small outlined class="purple purple--text text--lighten-2 mb-3">PRODUCT HIGHLIGHT</v-chip>
 
           <div class="mb-3">
@@ -264,7 +302,7 @@
     </v-container> -->
     
 
-  <v-container id="background">
+  <v-container id="background" class="pt-15">
     <v-row>
       <v-col>
         <div class="text-center mb-5">
@@ -450,7 +488,7 @@
     </div>
   </v-container>
 
-  <v-container  id="publication">
+  <v-container  id="publication" class="pt-15">
     <v-row>
       <v-col>
         <div class="text-center mb-5">
@@ -512,7 +550,7 @@
   </v-container>
 
 
-  <v-container id="competition">
+  <v-container id="competition" class="pt-15">
     <v-row>
       <v-col>
         <div class="text-center mb-5">
@@ -682,8 +720,8 @@
         style="z-index:999"
       >
               <div class="navMenusMobile  grey--text text--lighten-1">
-                <div class="mr-5" @click="scrollTo('#')">Home</div>
-                <div class="mr-5" @click="scrollTo('#highlight')">Highlight</div>
+                <div class="mr-5" @click="scrollTo('#')" >Home</div>
+                <div class="mr-5" @click="scrollTo('#highlight')" >Highlight</div>
                 <div class="mr-5" @click="scrollTo('#background')">Background</div>
                 <div class="mr-5" @click="scrollTo('#publication')">Publication</div>
                 <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
@@ -717,6 +755,8 @@ export default {
   },
   data(){
     return {
+      currentSection: '#profile',
+
       scrollPosition:null,
       boxShadowColor: '#00E2FFFF',
       model:0,
@@ -739,11 +779,32 @@ export default {
         once: true,
       });
     window.addEventListener('scroll', this.updateScroll);
-  },
-  methods:{
     
+  },
+      beforeDestroy() {
+        window.removeEventListener('scroll', this.onScroll);
+      },
+  methods:{
+      onScroll() {
+        const sections = ['#profile', '#highlight', '#background', '#publication', '#competition'];
+        for (const section of sections) {
+          const element = document.querySelector(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+              this.currentSection = section;
+              break;
+            }
+          }
+        }
+    },
     updateScroll() {
        this.scrollPosition = window.scrollY
+       this.onScroll()
+
+       if(this.scrollPosition < 200) {
+        this.currentSection = '#profile'
+       }
     },
     previewImg(val,type){
       this.previewType = type
@@ -987,7 +1048,7 @@ $light-blue-lighten-2:#4FC3F7;
 
 .navMenusMobile {
   div {
-    padding:10px;
+    padding:20px 0;
   }
 }
 
