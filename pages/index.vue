@@ -24,7 +24,7 @@
                 <div class="mr-5" @click="scrollTo('#competition')"  :style="currentSection === '#competition' ?  'font-weight:bold;;transform:scale(1.05);border-bottom:2px solid '+ boxShadowColor +';color:'+boxShadowColor:''">Competition</div>
                 <!-- <div class="mr-5" @click="$router.push('/project')">Projects</div> -->
               </div>
-              <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined :color="boxShadowColor"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn></div>
+              <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-end" style="width:200px"><v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined :color="boxShadowColor"><v-icon small class="mr-2">mdi-download</v-icon>Resume</v-btn></div>
           </div>
         </v-container>
     </div>
@@ -62,10 +62,10 @@
               <div style="max-width:500px;z-index:10" class="mt-5 ml-10" :class="{'full-width zeroLeft':$vuetify.breakpoint.smAndDown}">
                 <div class="pa-4">
                     <div class="d-flex align-start" style="position:relative">
-                      <div class="nameText mr-2" data-aos="fade-up">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" data-aos-delay="500" data-aos="zoom-in-right" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
+                      <div class="nameText dashedHover mr-2" data-aos="fade-up">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" data-aos-delay="500" data-aos="zoom-in-right" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
-                    <div class="mb-2" data-aos="fade-left">Hi! I'm Senior Front-End Developer of <span class="hoverToLink" @click="scrollTo('https://cityplan.id','blank')">Cityplan Indonesia</span>.</div>
-                    <div data-aos="fade-right">I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
+                    <div class="mb-2 dashedHover" data-aos="fade-left">Hi! I'm a Software Developer, mostly doing FE.</div>
+                    <div data-aos="fade-right" class="dashedHover">I work on most project using NuxtJS and Figma, I merge technical skills with design knowledge and AI tools to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
                     <div class="d-flex align-center mt-5" data-aos="zoom-in-up">
                       <div class="mr-4" ><v-btn outlined small @click="contactDialog=true"><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
                       <div class="iconButton" @click="scrollTo('https://github.com/brahmaputra7','blank')"><v-icon>mdi-github</v-icon></div>
@@ -77,7 +77,7 @@
             </div>
           </v-col>
         </v-row>
-        <v-row :class="$vuetify.breakpoint.smAndDown ? 'mt-1' : 'mt-10'">
+        <v-row  class="dashedHover" :class="$vuetify.breakpoint.smAndDown ? 'mt-1' : 'mt-10'">
           <v-col cols="12">
             <div class="text-center" data-aos="fade-up">
               Skill tags:
@@ -122,7 +122,7 @@
                 It integrates dynamic data visualizations, allowing users to explore water management models and strategic planning
                 tools for urban development.
               </div>
-              <p style="text-align: justify;font-size:12px">
+              <p style="text-align: justify;font-size:12px" class="dashedHover">
                 The app is developed using Vue.js, Nuxt.js, and MapLibre, providing a smooth and responsive user experience across
                 various devices. It efficiently handles complex datasets and delivers real-time data insights through seamless
                 integration with back-end services.
@@ -132,16 +132,72 @@
           </v-col>
         </v-row>
       </v-container>
-      <!-- <div class="d-flex" style="background-color: #2b2b2b;width:100%" :style="'flex-flow:row wrap;border-bottom:0.5px solid '+boxShadowColor">
-        <div class="pa-15" :style="'flex-basis:100%;border-right:0.5px solid '+boxShadowColor+';width:100%;max-width: 900px; mibackground-opacity:0.5;background: radial-gradient(circle , #5e5d5d ,#000)' " >
-          <img src="/polyurba.png" width="100%"/>
-        </div>
-        <div class="pa-5" style="flex-grow:1;background-color: #fff;">
-          <h1>
-            PolyurbanWaters
-          </h1>
-        </div>
-      </div> -->
+
+      <v-container fluid style="background-color: #2b2b2b;width:100%"
+        :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
+        <v-row>
+          <v-col cols="12" md="6" class="pa-5 d-flex align-center justify-center" style="flex-grow:1;">
+            <div style="max-width: 600px;">
+              <h1 class="d-flex align-center" :class="{'justify-center' : $vuetify.breakpoint.smAndDown}">
+                <div class="d-flex align-center" style="font-size:20px"><img class="rounded-lg mr-3" src="/img/q100.png"
+                    width="40px" />Q100+ Biofarma</div>
+                <v-divider v-if="!$vuetify.breakpoint.smAndDown" class="ml-3"
+                  :style="'border:1px solid '+ boxShadowColor"></v-divider>
+              </h1>
+              <div class="pa-3 mt-3 rounded-lg mb-3" :style="$vuetify.breakpoint.smAndDown ? 'font-size:12px':''"
+                style="background-color: #1FB4D2;">
+                In <b>Q100 Bio Farma's</b> internal supply chain management, My role is to develop audit systems to ensure supplier compliance, oversee material
+                qualification for quality assurance, manage vendor complaints to resolve issues efficiently, and lead vendor
+                qualification to secure reliable and trusted partners.
+              </div>
+              <p style="text-align: justify;font-size:12px" class="dashedHover">
+              The app is developed using React and Chakra UI, offering a sleek and user-friendly interface. It ensures
+              efficient management of supply chain processes and provides real-time insights through seamless integration with
+              back-end systems (ASP .NET), enhancing operational reliability and decision-making.
+              </p>
+              <v-btn href="https://www.biofarma.co.id/id/announcement/detail/biofarma-group-bakal-bagikan-inovasi-tranformasi-digital-di-aipf-2023" target="_blank" outlined :color="boxShadowColor" class="mb-5"
+                style="border-radius: 100px;">READ MORE<v-icon class="ml-5">mdi-arrow-right</v-icon></v-btn>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6" class="mb-0 pa-10 pt-0 d-flex align-center justify-end" :style="'width:100%;max-width: 900px;' ">
+            <img src="/img/bio.png" width="100%" style="border-radius: 30px" />
+          </v-col>
+        </v-row>
+      </v-container>
+
+      <v-container fluid style="background-color: #2b2b2b;width:100%"
+        :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
+        <v-row>
+          <v-col cols="12" md="6" class="mb-0 pa-10 pt-0 d-flex align-center justify-end" :style="'width:100%;max-width: 900px;' ">
+            <img src="/img/rdtr.png" width="100%" style="border-radius: 30px" />
+          </v-col>
+          <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
+            <div>
+              <h1 class="d-flex align-center" :class="{'justify-center' : $vuetify.breakpoint.smAndDown}">
+                <div class="d-flex align-center" style="font-size:20px"><img class="rounded-lg mr-3" src="/img/atr.svg"
+                    width="40px" /> GISTARU - RDTR Interaktif</div>
+                <v-divider v-if="!$vuetify.breakpoint.smAndDown" class="ml-3"
+                  :style="'border:1px solid '+ boxShadowColor"></v-divider>
+              </h1>
+              <div class="pa-3 mt-3 rounded-lg mb-3" :style="$vuetify.breakpoint.smAndDown ? 'font-size:12px':''"
+                style="background-color: #004875;">
+                An interactive platform developed for the spatial planning of urban areas in Indonesia,
+                specifically focusing on the regulation of spatial utilization and zoning. It provides users with a digital interface to
+                explore and analyze the city’s spatial planning data, such as land-use zones, building restrictions, and infrastructure
+                planning.
+              </div>
+              <p style="text-align: justify;font-size:12px" class="dashedHover">
+                This app is developed using Vue.js, integrating Esri Map Service and Esri Client-engine for dynamic mapping.
+              </p>
+              <v-btn href="https://oss.go.id/rdtr-interaktif" target="_blank" outlined :color="boxShadowColor" class="mb-5"
+                style="border-radius: 100px;">DISCOVER APP <v-icon class="ml-5">mdi-arrow-right</v-icon></v-btn>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+
+      
+
       <v-container>
         <v-row>
           <v-col>
@@ -200,8 +256,6 @@
         </v-col>
       </v-row>
       </v-container>
-      
-
     </div>
     
 
@@ -280,7 +334,9 @@
           </div>
 
           <div style="max-width: 800px">
-            <div class="text-center">Cityplan interested to build the future of Electric Vehicle (EV) Ecosystem. We have researching several apps and analytical ideas. This is one of our early prototype, a smart routing plan considering multiple factos of EV.</div>
+            <div class="text-center">The project is focused on building the future of the Electric Vehicle (EV) ecosystem. We have been researching various
+            apps and analytical concepts. This is one of our early prototypes, a smart routing plan that considers multiple factors
+            for EVs.</div>
           </div>
 
           <img src="/img/ev.png" style="max-width:650px; width:100%;" class="my-5"/>
@@ -298,17 +354,95 @@
     </v-container> -->
     
 
-  <v-container id="background" class="pt-15">
+  <div id="highlight" class="section-2">
+    <div data-aos="fade-in" class="text-center pa-5" :class="$vuetify.breakpoint.smAndDown ? 'mt-10':'mt-15'"
+      :style="'font-size:12px;letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
+      <span :style="'color:'+boxShadowColor+';'">--</span>BACKGROUND<span
+        :style="'color:'+boxShadowColor+';'">--</span>
+    </div>
+
+    <v-container>
+      <v-row>
+        <v-col cols="12" class="d-flex justify-center">
+          <div class="mt-5 pa-3" style="max-width: 800px; width: 100%;">
+            <div class="mb-5" style="letter-spacing: 2px;">
+              <b>PROFESSIONAL EXPERIENCE</b>
+            </div>
+            <div class="d-flex" :style=" $vuetify.breakpoint.smAndDown ? 'flex-direction:column' : 'flex-direction:row'">
+              <div>
+                <img class="mr-5 mb-3" src="/pw.png" width="100px" height="100px">
+              </div>
+              <div>
+                <b>Polyurban Waters</b> | Software Engineer
+                <div>Developing and maintaining Kota Ramah Air, a GIS-based web application for the management and visualization of
+                water-related data. Built using NuxtJS, MapLibre, and a custom MapServer, with seamless integration of a backend API.
+                Collaborated with Technische Universität Berlin, Kota Kita, and Cityplan. For more information, visit: <a href="https://kotaramahair.id">kotaramahair.id</a>.</div>
+                <div class="mt-3"><v-chip class="mr-3 mb-1" small>AUG 1st, 2024 - Present </v-chip></div>
+              </div>
+              
+            </div>
+
+            <v-divider class="my-5"></v-divider>
+
+            <div class="d-flex" :style=" $vuetify.breakpoint.smAndDown ? 'flex-direction:column' : 'flex-direction:row'">
+              <div>
+                <img class="mr-5 mb-3" src="/bio.png" width="100px" height="100px">
+              </div>
+              <div>
+                <b>Biofarma</b> | Software Engineer, FE
+                <div>Developing the Vendor Qualification and Audit Management module for Q100+ Biofarma, an internal supply chain management
+                application. Built with ReactJS, this module streamlines vendor evaluation and audit processes to enhance operational
+                efficiency.
+                <div class="mt-3"><v-chip class="mr-3 mb-1" small>JUL 2023 - JUL 2024 </v-chip></div>
+              </div>
+            
+              </div>
+            </div>
+
+            <v-divider class="my-5"></v-divider>
+
+            <div class="d-flex" :style=" $vuetify.breakpoint.smAndDown ? 'flex-direction:column' : 'flex-direction:row'">
+              <div>
+                <img class="mr-5 mb-3" src="/amartha.jpg" width="100px" height="100px">
+              </div>
+              <div>
+                <b>Amartha</b> | Software Engineer, FE
+                <div>During my 4-month term at Amartha, I contributed to developing key features such as the Promotional Voucher and Investor
+                Dashboard Revamp. Using NextJS.
+                  <div class="mt-3"><v-chip class="mr-3 mb-1" small>MAR 2023 - JUN 2023 </v-chip></div>
+                </div>
+            
+              </div>
+            </div>
+            
+            <v-divider class="my-5"></v-divider>
+
+            <div class="d-flex" :style=" $vuetify.breakpoint.smAndDown ? 'flex-direction:column' : 'flex-direction:row'">
+              <div>
+                <img class="mr-5 mb-3" src="/img/cityplan.png" width="100px" height="100px">
+              </div>
+              <div>
+                <b>Cityplan</b> | Software Engineer, Core FE-Developer
+                <div>
+                Building location intelligence tools at Cityplan, such as Spatia, Foot-Traffic, and EV-Routing, among others.
+                Additionally, I contributed to various governmental projects, including the <a href="https://oss.go.id/rdtr-interaktif">OSS RDTR-Interaktif</a>, during my 5 years at
+                Cityplan.
+                  <div class="mt-3"><v-chip class="mr-3 mb-1" small>FEB 2018 - FEB 2023</v-chip></div>
+                </div>
+            
+              </div>
+            </div>
+
+
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+  
+  <v-container id="background">
     <v-row>
       <v-col>
-        <div class="text-center mb-5">
-          <h1>
-            Background<span class="ml-3"><v-icon  :style="'color:'+boxShadowColor">mdi-shield-account</v-icon></span>
-          </h1>
-        </div>
-        <div class="text-center">
-          
-        </div>
         <div class="d-flex justify-center">
           
 
@@ -316,45 +450,6 @@
               align-top
               dense
             >
-
-          <v-timeline-item
-              color="pink"
-              >
-            <h3>
-              Work Experience
-            </h3>
-          </v-timeline-item>
-
-          <v-timeline-item
-              color="pink"
-              hide-dot
-              small
-            >
-            <div class="d-flex" style="flex-flow:row wrap">
-              <img width="60px" class="mr-5" src="/img/cityplan.png" style="border-radius:20px"/>
-                <div  style="flex-flow:row wrap">
-                <div style="font-size:1.3em" class="mb-2"><b>Cityplan Indonesia</b></div>
-                <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>JUN 2018 - Present </v-chip> Software Engineer, Front-End </div>
-                </div>
-              </div>
-            </v-timeline-item>
-          
-            
-          <v-timeline-item
-              color="yellow"
-              center
-              small
-              hide-dot
-            >
-            <div class="d-flex"  style="flex-flow:row wrap">
-             <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/esdm.png" style="border-radius:20px"/></div>
-              <div>
-               <div style="font-size:1.3em" class="mb-2"><b>Ministry of Energy and Mineral Resource</b></div>
-               <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>OCT 2016 - FEB 2017 </v-chip>Software Engineer (Internship)</div>
-              </div>
-            </div>
-
-            </v-timeline-item>
 
             <v-timeline-item
               class="mt-3">
@@ -372,8 +467,8 @@
                 <div class="d-flex" style="flex-flow:row wrap">
                   <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/upi.svg" style="border-radius:20px"/></div>
                     <div  style="flex-flow:row wrap">
-                    <div style="font-size:1.3em" class="mb-2"><b>Indonesia University of Education</b></div>
-                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>JUL 2013 - DEC 2017 </v-chip> Computer Science </div>
+                    <div style="font-size:1.3em" class="mb-2"><b>Universitas Pendidikan Indonesia</b></div>
+                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>JUL 2013 - DEC 2017 </v-chip>Bachelor of Computer Science / 3.62 </div>
                     </div>
                   </div>
               </v-timeline-item>
@@ -383,8 +478,31 @@
                 color="green"
               class="mt-3">
               <h3>
-                Training
+                Training and Certification
               </h3>
+            </v-timeline-item>
+
+            <v-timeline-item color="pink" center small hide-dot>
+              <div class="d-flex" style="flex-flow:row wrap">
+                <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img
+                    width="100%" src="/img/google.png" style="border-radius:20px" /></div>
+                <div style="flex-flow:row wrap">
+                  <div style="font-size:1.3em" class="mb-2"><b>UX Design</b></div>
+                  <div class="d-flex align-center" style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>NOV 2022</v-chip> Google UX <v-btn href="https://coursera.org/share/e477437d60936aeae6805173d32b795e" download x-small>View Certificate</v-btn></div>
+                </div>
+              </div>
+            </v-timeline-item>
+            
+            <v-timeline-item color="pink" center small hide-dot>
+              <div class="d-flex" style="flex-flow:row wrap">
+                <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img
+                    width="100%" src="/img/ef.png" style="border-radius:20px" /></div>
+                <div style="flex-flow:row wrap">
+                  <div style="font-size:1.3em" class="mb-2"><b>C1 Advanced English</b></div>
+                  <div class="d-flex align-center" style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>NOV 2022</v-chip>
+                    <v-btn href="/pdf/c1-advanced-certificate-brahma.pdf" download x-small>View Certificate</v-btn> </div>
+                </div>
+              </div>
             </v-timeline-item>
 
             <v-timeline-item
@@ -397,7 +515,7 @@
                   <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/treehouse.png" style="border-radius:20px"/></div>
                     <div  style="flex-flow:row wrap">
                     <div style="font-size:1.3em" class="mb-2"><b>Front-End Web Development</b></div>
-                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>2018</v-chip> Teamtreehouse.com </div>
+                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>JAN 2018</v-chip> Teamtreehouse.com </div>
                     </div>
                   </div>
               </v-timeline-item>
@@ -412,52 +530,12 @@
                     <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/treehouse.png" style="border-radius:20px"/></div>
                       <div  style="flex-flow:row wrap">
                       <div style="font-size:1.3em" class="mb-2"><b>VueJS</b></div>
-                      <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>2018</v-chip> Teamtreehouse.com </div>
+                      <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>JAN 2018</v-chip> Teamtreehouse.com </div>
                       </div>
                     </div>
                 </v-timeline-item>
 
                 
-
-                <v-timeline-item
-                    color="pink"
-                    center
-                    small
-                    hide-dot
-                  >
-                    <div class="d-flex" style="flex-flow:row wrap">
-                      <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/google.png" style="border-radius:20px"/></div>
-                        <div  style="flex-flow:row wrap">
-                        <div style="font-size:1.3em" class="mb-2"><b>UX Design</b></div>
-                        <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>Ongoing</v-chip> Google UX Professional Certification</div>
-                        </div>
-                      </div>
-                  </v-timeline-item>
-
-
-                  
-            <v-timeline-item
-                color="purple"
-              class="mt-3">
-              <h3>
-                Certification
-              </h3>
-            </v-timeline-item>
-
-            <v-timeline-item
-                color="pink"
-                center
-                small
-                hide-dot
-              >
-                <div class="d-flex" style="flex-flow:row wrap">
-                  <div class="white mr-5 pa-1 d-flex align-center justify-center" style="width:60px;border-radius:20px"><img width="100%" src="/img/ef.png" style="border-radius:20px"/></div>
-                    <div  style="flex-flow:row wrap">
-                    <div style="font-size:1.3em" class="mb-2"><b>C1 Advanced English</b></div>
-                    <div class="d-flex align-center"  style="flex-flow:row wrap"><v-chip class="mr-3 mb-1" small>Nov 2022</v-chip> <v-btn href="/pdf/c1-advanced-certificate-brahma.pdf" download x-small>View Certificate</v-btn> </div>
-                    </div>
-                  </div>
-              </v-timeline-item>
 
 
             
@@ -723,7 +801,7 @@
                 <div class="mr-5" @click="scrollTo('#competition')">Competition</div>
                 <div class="mr-5" @click="$router.push('/project')">Projects</div>
                 <div>
-                  <v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Curriculum Vitae</v-btn>
+                  <v-btn href="/pdf/cv-brahma-putra.pdf" download="" target="blank" class="buttonScaled" small outlined color="light-blue lighten-2"><v-icon small class="mr-2">mdi-download</v-icon>Resume</v-btn>
                 </div>
                 
               </div>
@@ -732,7 +810,7 @@
       
 
 
-  <div class="text-center pa-3 pb-10 grey--text">2022. @brahmaptr</div>
+  <div class="text-center pa-3 pb-10 grey--text">2025 | BRAHMA PUTRA</div>
   </div>
 </template>
 
@@ -854,6 +932,7 @@ $light-blue-lighten-2:#4FC3F7;
   display:flex;
   align-items: center;
   top:0;
+  left:0;
   width:100%;
   height:80px;
   z-index:50 !important;    
@@ -946,6 +1025,10 @@ $light-blue-lighten-2:#4FC3F7;
   position: relative;
   z-index:10;
   font-size:3em;
+  border:1px dashed transparent;
+  &:hover {
+    border:1px dashed rgba(255,255,255,.2);
+  }
 }
 .iconButton {
   cursor:pointer;
@@ -1045,6 +1128,13 @@ $light-blue-lighten-2:#4FC3F7;
 .navMenusMobile {
   div {
     padding:20px 0;
+  }
+}
+
+.dashedHover {
+  border:1px dashed transparent;
+  &:hover {
+    border:1px dashed rgba(255,255,255,.5);
   }
 }
 
