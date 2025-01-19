@@ -370,7 +370,7 @@
             </div>
             <div class="d-flex" :style=" $vuetify.breakpoint.smAndDown ? 'flex-direction:column' : 'flex-direction:row'">
               <div>
-                <img class="mr-5 mb-3" src="/pw.png" width="100px" height="100px">
+                <img class="mr-5 mb-3" src="/kk.png" width="100px" height="100px">
               </div>
               <div>
                 <b>KotaKita - Polyurban Waters</b> | Software Engineer
