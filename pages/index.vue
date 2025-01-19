@@ -373,7 +373,7 @@
                 <img class="mr-5 mb-3" src="/pw.png" width="100px" height="100px">
               </div>
               <div>
-                <b>Polyurban Waters</b> | Software Engineer
+                <b>KotaKita - Polyurban Waters</b> | Software Engineer
                 <div>Developing and maintaining Kota Ramah Air, a GIS-based web application for the management and visualization of
                 water-related data. Built using NuxtJS, MapLibre, and a custom MapServer, with seamless integration of a backend API.
                 Collaborated with Technische Universität Berlin, Kota Kita, and Cityplan. For more information, visit: <a href="https://kotaramahair.id">kotaramahair.id</a>.</div>
