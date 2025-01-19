@@ -64,7 +64,7 @@
                     <div class="d-flex align-start" style="position:relative">
                       <div class="nameText dashedHover mr-2" data-aos="fade-up">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" data-aos-delay="500" data-aos="zoom-in-right" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
-                    <div class="mb-2 dashedHover" data-aos="fade-left">Hi! I'm a Software Developer, mostly doing FE.</div>
+                    <div class="mb-2 dashedHover" data-aos="fade-left">Hi! I'm a Software Engineer.<br/> mostly doing Front-End.</div>
                     <div data-aos="fade-right" class="dashedHover">I work on most project using NuxtJS and Figma, I merge technical skills with design knowledge and AI tools to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
                     <div class="d-flex align-center mt-5" data-aos="zoom-in-up">
                       <div class="mr-4" ><v-btn outlined small @click="contactDialog=true"><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
@@ -85,8 +85,8 @@
             <div data-aos="fade-up" class="d-flex justify-center">
               <div style="max-width:600px;text-align: center;">
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Front-end Development</v-chip>
-                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Vue JS</v-chip>
-                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Nuxt JS</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Vue/Nuxt</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">React/Next</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">GIS</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Arcgis Javascript</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Mapbox</v-chip>
@@ -354,10 +354,10 @@
     </v-container> -->
     
 
-  <div id="highlight" class="section-2">
+  <div id="background" class="section-2">
     <div data-aos="fade-in" class="text-center pa-5" :class="$vuetify.breakpoint.smAndDown ? 'mt-10':'mt-15'"
       :style="'font-size:12px;letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
-      <span :style="'color:'+boxShadowColor+';'">--</span>BACKGROUND<span
+      <span :style="'color:'+boxShadowColor+';'">--</span>EXPERIENCE<span
         :style="'color:'+boxShadowColor+';'">--</span>
     </div>
 
@@ -377,7 +377,7 @@
                 <div>Developing and maintaining Kota Ramah Air, a GIS-based web application for the management and visualization of
                 water-related data. Built using NuxtJS, MapLibre, and a custom MapServer, with seamless integration of a backend API.
                 Collaborated with Technische Universität Berlin, Kota Kita, and Cityplan. For more information, visit: <a href="https://kotaramahair.id">kotaramahair.id</a>.</div>
-                <div class="mt-3"><v-chip class="mr-3 mb-1" small>AUG 1st, 2024 - Present </v-chip></div>
+                <div class="mt-3"><v-chip class="mr-3 mb-1" small>AUG 2024 - Present </v-chip></div>
               </div>
               
             </div>
@@ -425,19 +425,41 @@
                 <b>Cityplan</b> | Software Engineer, Core FE-Developer
                 <div>
                 Building location intelligence tools at Cityplan, such as Spatia, Foot-Traffic, and EV-Routing, among others.
-                Additionally, I contributed to various governmental projects, including the <a href="https://oss.go.id/rdtr-interaktif">OSS RDTR-Interaktif</a>, during my 5 years at
-                Cityplan.
+                Additionally, I contributed to various governmental projects, including the <a href="https://oss.go.id/rdtr-interaktif">OSS RDTR-Interaktif</a>.
                   <div class="mt-3"><v-chip class="mr-3 mb-1" small>FEB 2018 - FEB 2023</v-chip></div>
                 </div>
             
               </div>
             </div>
 
+            <v-divider class="my-5"></v-divider>
+            
+            <div class="d-flex" :style=" $vuetify.breakpoint.smAndDown ? 'flex-direction:column' : 'flex-direction:row'">
+              <div>
+                <img class="mr-5 mb-3" src="/img/esdm.png" width="100px" height="100px">
+              </div>
+              <div>
+                <b>Kementerian ESDM</b> | Software Engineer Intern
+                <div>
+                  During my internship, I was involved in the development of a drilling permit application and a groundwater GIS web
+                  application, under the supervision of a senior developer.
+                  <div class="mt-3"><v-chip class="mr-3 mb-1" small>SEP 2016 - DEC 2016</v-chip></div>
+                </div>
+            
+              </div>
+            </div>
+
+
 
           </div>
         </v-col>
       </v-row>
     </v-container>
+  </div>
+
+  <div data-aos="fade-in" class="text-center pa-5" :class="$vuetify.breakpoint.smAndDown ? 'mt-10':'mt-15'"
+    :style="'font-size:12px;letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
+    <span :style="'color:'+boxShadowColor+';'">--</span>EDUCATION / TRAINING<span :style="'color:'+boxShadowColor+';'">--</span>
   </div>
   
   <v-container id="background">
