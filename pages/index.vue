@@ -230,6 +230,38 @@
         </v-row>
       </v-container>
 
+      <v-container fluid style="background-color: #2b2b2b;width:100%"
+        :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
+        <v-row>
+          <v-col cols="12" md="6" class="mb-0 pa-10 pt-0 d-flex align-center justify-end"
+            :style="'width:100%;max-width: 900px;' ">
+            <img src="/img/footraffic.png" class="mt-10" width="100%" style="border-radius: 30px" />
+          </v-col>
+          <v-col cols="12" md="5" class="pa-5 d-flex align-center" style="flex-grow:1;">
+            <div>
+              <h1 class="d-flex align-center" :class="{'justify-center' : $vuetify.breakpoint.smAndDown}">
+                <div class="d-flex align-center" style="font-size:20px"><img class="rounded-lg mr-3" src="/img/cityplan.png"
+                    width="40px" /> Cityplan Foot Traffic Analyisiss</div>
+                <v-divider v-if="!$vuetify.breakpoint.smAndDown" class="ml-3"
+                  :style="'border:1px solid '+ boxShadowColor"></v-divider>
+              </h1>
+              <div class="pa-3 mt-3 rounded-lg mb-3" :style="$vuetify.breakpoint.smAndDown ? 'font-size:12px':''"
+                style="background-color: #004875;">
+              A foot traffic analysis prototype is a web-based application that processes and visualizes movement data to analyze
+              pedestrian trends in specific areas. It uses spatial data analytics to generate insights, such as density patterns and
+              popular routes, aiding businesses and urban planners in decision-making. The prototype includes interactive maps,
+              heatmaps, and basic analytics to support data-driven insights.
+              </div>
+              <p style="text-align: justify;font-size:12px" class="dashedHover">
+                This app is developed using Vue.js and MapBox.
+              </p>
+              <v-btn href="https://foot-traffic-cityplan.netlify.app/map/" target="_blank" outlined :color="boxShadowColor" class="mb-5"
+                style="border-radius: 100px;">DISCOVER APP <v-icon class="ml-5">mdi-arrow-right</v-icon></v-btn>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+
       
 
       <v-container>
