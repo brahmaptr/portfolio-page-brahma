@@ -106,6 +106,7 @@
        :style="'font-size:12px;letter-spacing:5px;border-bottom:0.5px solid '+boxShadowColor +';border-top:0.5px solid '+boxShadowColor +';background-opacity:0.5;background: radial-gradient(circle 3000px, #000 ,'+boxShadowColor+')'">
         <span  :style="'color:'+boxShadowColor+';'">--</span>LATEST DEVELOPMENT<span :style="'color:'+boxShadowColor+';'">--</span>
       </div>
+
       <v-container fluid  style="background-color: #2b2b2b;width:100%" :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
         <v-row>
           <v-col cols="12" md="7" class="mb-0 pb-0" :style="'width:100%;max-width: 900px;' ">
@@ -192,6 +193,39 @@
               <v-btn href="https://oss.go.id/rdtr-interaktif" target="_blank" outlined :color="boxShadowColor" class="mb-5"
                 style="border-radius: 100px;">DISCOVER APP <v-icon class="ml-5">mdi-arrow-right</v-icon></v-btn>
             </div>
+          </v-col>
+        </v-row>
+      </v-container>
+
+      <v-container fluid style="background-color: #2b2b2b;width:100%"
+        :style="'background: radial-gradient(circle , #2e2e2e ,#000);border-bottom:0.5px solid '+boxShadowColor">
+        <v-row>
+          <v-col cols="12" md="6" class="pa-5 d-flex align-center justify-center" style="flex-grow:1;">
+            <div style="max-width: 600px;">
+              <h1 class="d-flex align-center" :class="{'justify-center' : $vuetify.breakpoint.smAndDown}">
+                <div class="d-flex align-center" style="font-size:20px"><img class="rounded-lg mr-3" src="/img/rvc.png"
+                    width="40px" />Rent Value Capture</div>
+                <v-divider v-if="!$vuetify.breakpoint.smAndDown" class="ml-3"
+                  :style="'border:1px solid '+ boxShadowColor"></v-divider>
+              </h1>
+              <div class="pa-3 mt-3 rounded-lg mb-3" :style="$vuetify.breakpoint.smAndDown ? 'font-size:12px':''"
+                style="background-color: #1FB4D2;">
+                Rent Value Capture (RVC) is a research project that focus on building prediction model and demonstrate Price Prediction Interactive Map with Arcgis Javascript SDK that consumes
+                prediction model from Python Flask API. 
+              </div>
+              <p style="text-align: justify;font-size:12px" class="dashedHover">
+                The app is built with Nuxt.js for the front end, Python Flask for the backend API, and Jupyter Notebook for developing
+                the prediction model. It uses the ArcGIS JavaScript SDK to visualize predicted property values on an interactive map.
+              </p>
+              <v-btn
+                href="/rvc.pdf"
+                target="_blank" outlined :color="boxShadowColor" class="mb-5" style="border-radius: 100px;">READ MORE<v-icon
+                  class="ml-5">mdi-arrow-right</v-icon></v-btn>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6" class="mb-0 pa-10 pt-0 d-flex align-center justify-end"
+            :style="'width:100%;max-width: 900px;' ">
+            <img src="/rvc.png" width="100%" style="border-radius: 30px" />
           </v-col>
         </v-row>
       </v-container>
