@@ -92,8 +92,6 @@
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Python</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">User Experience (UX)</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">SQL</v-chip>
-                <v-chip :small="$vuetify.breakpoint.smAndDown" @click="skillsDialog=true" class="mr-b mt-2 light-blue">View
-                  More</v-chip>
               </div>
             </div>
           </v-col>
