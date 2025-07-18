@@ -64,8 +64,8 @@
                     <div class="d-flex align-start" style="position:relative">
                       <div class="nameText dashedHover mr-2" data-aos="fade-up">Brahma Putra<span :style="'color:'+boxShadowColor">.</span></div><div class="updownAnimated" data-aos-delay="500" data-aos="zoom-in-right" :style="'opacity:0.2;border-radius:50px;width:100px;height:100px;background-color:'+boxShadowColor+';box-shadow: 0 0 50px 0px ' +boxShadowColor"></div>
                     </div>
-                    <div class="mb-2 dashedHover" data-aos="fade-left">Hi! I'm a Software Engineer.<br/> mostly doing Front-End.</div>
-                    <div data-aos="fade-right" class="dashedHover">I work on most project using NuxtJS and Figma, I merge technical skills with design knowledge and AI tools to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
+                    <div class="mb-2 dashedHover" data-aos="fade-left">Building Tech & Data Platform</div>
+                    <div data-aos="fade-right" class="dashedHover">I merge technical skills with design knowledge and AI tools to create innovative products that drive business. Mostly build tools for spatial analysis and public services. Bachelor of Computer Science.</div>
                     <div class="d-flex align-center mt-5" data-aos="zoom-in-up">
                       <div class="mr-4" ><v-btn outlined small @click="contactDialog=true"><v-icon small class="mr-2">mdi-email</v-icon>Contact</v-btn></div>
                       <div class="iconButton" @click="scrollTo('https://github.com/brahmaputra7','blank')"><v-icon>mdi-github</v-icon></div>
@@ -73,7 +73,7 @@
                       <div class="iconButton" @click="scrollTo('https://www.linkedin.com/in/brahmaputra7/','blank')"><v-icon>mdi-linkedin</v-icon></div>
                     </div>
                   </div>
-              </div>
+                </div>
             </div>
           </v-col>
         </v-row>
