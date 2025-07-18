@@ -87,11 +87,11 @@
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Front-end Development</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Vue/Nuxt</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">React/Next</v-chip>
-                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">GIS</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Geospatial</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Arcgis Javascript</v-chip>
-                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Mapbox</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Python</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">User Experience (UX)</v-chip>
-                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">Figma</v-chip>
+                <v-chip :small="$vuetify.breakpoint.smAndDown" class="mr-b mt-2">SQL</v-chip>
                 <v-chip :small="$vuetify.breakpoint.smAndDown" @click="skillsDialog=true" class="mr-b mt-2 light-blue">View
                   More</v-chip>
               </div>
